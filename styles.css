@@ -6,20 +6,25 @@
 #grid {
     display: grid;
     grid-template-columns: 1fr 3fr 1.25fr;
-    grid-template-rows: 1fr 1fr 0.5fr 3fr 1fr;
+    grid-template-rows: 1fr 5fr 8fr 2fr;
     justify-items: auto;
     align-items: baseline;
     height: 1024px;
-    background-color: #EBBE9B;
-}
-
-#grid > div {
-    border: 1px dashed gray;
+    background-color: #FFFFFF;
 }
 
 #header {
     background-color: #7EA172;
     grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
+}
+
+#banner {
+    grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 4;
@@ -28,27 +33,29 @@
 }
 
 #section {
-    background-color: #E7A977;
+    background-color: #FFFFFF;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 5;
     width: 100%;
     height: 100%;
+    border-radius: 15px;
+    
 }
 
 #footer {
     background-color: #502419;
     grid-column-start: 1;
     grid-column-end: 4;
-    grid-row-start: 5;
-    grid-row-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 5;
     width: 100%;
     height: 100%;
 }
 
 #h_navBar {
-    background-color: #F2EFE9;
+    background-color: #FFFFFF;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -59,7 +66,11 @@
 
 /*=============  Stylings  =====================*/
 
-h1 {
+#banner {
+    background: no-repeat left center/100%  url("img/conference_premium.jpg");
+}
+
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
@@ -86,8 +97,65 @@ h1 {
     font-size: 1.2em;
     line-height: 2.5em;
 
+
 }
 
-a:hover, a:active{
+#booking_pane {
+    height: 360px;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+#date_picker {
+    width: 70%;
+    margin: 20px auto auto auto;
+}
+
+#dp_left {
+    padding: 5px;
+    float: left;
+    font-size: 2em;
+}
+
+#dp_date {
+    font-size: 1.5em;
+}
+
+#dp_right {
+    padding: 5px;
+    float: right;
+    font-size: 2em;
+}
+
+a:hover, a:active, .active{
+    text-decoration: underline;
     color: #545759;
+}
+
+#swiper {
+    padding: 1.8rem 8px 0 30px !important;
+    width: max-content;
+    height: max-content;
+    margin: auto;
+}
+
+.card {
+    width: 220px;
+    float: left;
+    margin-right: 20px;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+    border-radius: 10px;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.img_widget {
+    width: 100%;
+    height: auto;
+}
+
+.success {
+    color: forestgreen;
 }
