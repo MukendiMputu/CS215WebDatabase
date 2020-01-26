@@ -1,0 +1,93 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #000000;
+}
+/*=============  The Grid  =====================*/
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1.25fr;
+    grid-template-rows: 1fr 1fr 0.5fr 3fr 1fr;
+    justify-items: auto;
+    align-items: baseline;
+    height: 1024px;
+    background-color: #EBBE9B;
+}
+
+#grid > div {
+    border: 1px dashed gray;
+}
+
+#header {
+    background-color: #7EA172;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    width: 100%;
+    height: 100%;
+}
+
+#section {
+    background-color: #E7A977;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    width: 100%;
+    height: 100%;
+}
+
+#footer {
+    background-color: #502419;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    width: 100%;
+    height: 100%;
+}
+
+#h_navBar {
+    background-color: #F2EFE9;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width: 100%;
+    height: 15%;
+}
+
+/*=============  Stylings  =====================*/
+
+h1 {
+    margin: 0;
+}
+
+#logo {
+    width: max-content;
+    float: left;
+    margin: 10px auto auto 10px;
+}
+
+#h_side-nav{
+    width: max-content;
+    float: right;
+    margin: 10px 10px auto auto;
+}
+
+#side-nav {
+    margin: 0;
+    list-style-type: none;
+}
+
+#side-nav > li {
+    float: left;
+    margin-left: 15px;
+    font-size: 1.2em;
+    line-height: 2.5em;
+
+}
+
+a:hover, a:active{
+    color: #545759;
+}
