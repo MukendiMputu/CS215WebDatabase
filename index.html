@@ -15,18 +15,18 @@
           </div>
           <div id="h_side-nav">
             <ul id="side-nav">
-              <li><a href="#h_navBar" class="active">Home</a></li>
+              <li><a class="active" >Home</a></li>
               <li><a>Active</a></li>
               <li><a>Sign in</a></li>
-              <li><a>Sign up</a></li>
+              <li><a class="btn_primary" href="signup.html">Sign up</a></li>
             </ul>
           </div>
         </div>
       </div> <!-- end of header -->
       <div id="banner"></div><!-- end of banner -->
       <div id="section">
-        <div id="booking_pane">
-          <div id="bp_titel"><h3>Bookings</h3></div>
+        <div id="main_pane">
+          <div id="mp_titel"><h3>Bookings</h3></div>
           <div id="date_picker">
             <a href="#"><span id="dp_left">&langle;</span></a>
             <span id="dp_date">Today, Jan. 20<sup>th</sup> 2020</span>
@@ -72,7 +72,7 @@
             </select>
             <input type="date">
             <input type="date">
-            <input type="submit" value="SEARCH">
+            <input type="submit" value="SEARCH" class="btn-primary medium">
           </div>
         </div> <!-- end of search -->
         <div id="evt_pane" class="panes">
@@ -100,9 +100,26 @@
         </div><!-- end of event pane -->
       </div> <!-- end of section -->
       <div id="footer">
-        <div id="f_map"></div>
-        <div id="f_cont"></div>
-        <div id="f_impr"></div>
+        <div id="f_wrapper">
+          <div id="f_map" class="f_box">
+            <h3>Location</h3>
+            <p>Lorem ipsum dolor sit amet<br>consetetur sadipscing elitr,<br>
+              sed diam nonumy eirmod tempor <br>invidunt ut labore et dolore<br>
+              magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+          <div id="f_cont" class="f_box">
+            <h3>Contact</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore
+              magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+          <div id="f_impr" class="f_box">
+            <h3>Impresum</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore
+              magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+        </div>
       </div> <!-- end of footer -->
     </div> <!-- end of container -->
   </body>
