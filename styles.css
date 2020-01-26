@@ -200,6 +200,10 @@ a:hover, a:active, .active{
     display: flow-root;
 }
 
+.form-date {
+    padding: 6px;
+}
+
 .btn-primary {
     background-color: #7EA172;
     border: 1px solid gainsboro;
