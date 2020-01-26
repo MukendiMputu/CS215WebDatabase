@@ -32,7 +32,7 @@
             <span id="dp_date">Today, Jan. 20<sup>th</sup> 2020</span>
             <a href="#"><span id="dp_right">&rangle;</span></a>
           </div>
-          <div id="swiper">
+          <div id="swiper" class="panes">
             <div id="room1" class="card">
               <div class="card_img">
                 <img class="img_widget" src="img/conference_bright.jpg">
@@ -62,7 +62,7 @@
             </div>
           </div>
         </div> <!-- end of booking pane -->
-        <div id="search">
+        <div id="search" class="panes">
           <div id="input_pane">
             <select id="ip_search" name="rooms">
               <option value=""></option>
@@ -70,11 +70,34 @@
               <option value="ric315">RIC 315</option>
               <option value="ric330">RIC 330</option>
             </select>
-            |
             <input type="date">
             <input type="date">
+            <input type="submit" value="SEARCH">
           </div>
-        </div>
+        </div> <!-- end of search -->
+        <div id="evt_pane" class="panes">
+          <div id="evt1" class="card">
+            <div class="card_img">
+              <span>RIC 214</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor.</p>
+          </div>
+          <div id="evt1" class="card">
+            <div class="card_img">
+              <span>RIC 315</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor.</p>
+          </div>
+          <div id="evt1" class="card">
+            <div class="card_img">
+              <span>RIC 330</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor.</p>
+          </div>
+        </div><!-- end of event pane -->
       </div> <!-- end of section -->
       <div id="footer">
         <div id="f_map"></div>
