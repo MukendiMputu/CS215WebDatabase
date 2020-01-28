@@ -193,6 +193,17 @@ a:hover, a:active, .active{
     text-align: left;
 }
 
+.card-fixed {
+    width: 220px;
+    height: 200px;
+    float: left;
+    margin-right: 20px;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+    border-radius: 10px;
+    padding: 0.5rem;
+    text-align: left;
+}
+
 #avatar{
     width: 20%;
     height: auto;
@@ -234,6 +245,14 @@ a:hover, a:active, .active{
     border-radius: 7px;
     padding: 5px 10px;
     background-color: #7D7C84;
+    color: #FFFFFF;
+}
+
+.btn-success {
+    background-color: #7EA172;
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+    padding: 5px 10px;
     color: #FFFFFF;
 }
 
@@ -289,24 +308,22 @@ button:hover, input[type=submit]:hover {
 
 #mp_tabs > ul > li{
 	margin:0 2px 0 0;
-	padding: 5px 15px;
+	padding: 5px 10px;
 	display:block;
 	float:left;
 }
 
 #containers {
-    width: 100%;
+    width: 95%;
     margin-top: 1.5em;
-}
-
-#containers {
     text-align: initial;
 	padding:10px 10px 25px;
-	margin:0;
+
 }
 
-#overvPanel {
+#overvPanel, #catering, #equipment, #more {
     display: grid;
+    row-gap: 10px;
     grid-template-columns: 250px auto;
 }
 
@@ -321,4 +338,17 @@ button:hover, input[type=submit]:hover {
 
 .optionLink:hover {
     background-color: rgb(80,36,25, 0.05);
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+textarea {
+    padding: 10px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    resize: vertical;
 }
