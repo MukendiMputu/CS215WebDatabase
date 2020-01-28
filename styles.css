@@ -1,5 +1,6 @@
 * {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* border: 1px solid gainsboro; */
 }
 
 body {
@@ -10,8 +11,9 @@ body {
 #grid {
     display: grid;
     grid-template-columns: 1fr 3fr 1.25fr;
-    grid-template-rows: 70px 5fr 8fr 3fr;
+    grid-template-rows: 50px 370px 8fr 3fr;
     background-color: #FFFFFF;
+    row-gap: 20px;
 }
 
 #header {
@@ -21,9 +23,12 @@ body {
     grid-row-end: 2;
     width: 100%;
     height: 100%;
+    padding-bottom: 15px;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
 }
 
 #banner {
+    background: no-repeat left center/100%  url("img/conference_premium.jpg");
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 2;
@@ -38,11 +43,9 @@ body {
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
-    row-gap: 20px;
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    margin-top: -20px;
 }
 
 #footer {
@@ -68,18 +71,33 @@ body {
 
 /*=============  Stylings  =====================*/
 
-#banner {
-    background: no-repeat left center/100%  url("img/conference_premium.jpg");
+#user-info {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    width: 100%;
+    height: auto;
+    margin: 50px auto 0px;
 }
+
+#user-info > div#user-info-pane {
+    width: 30%;
+    float: left;
+}
+
+
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
 #logo {
-    width: max-content;
-    float: left;
     margin: 10px auto auto 10px;
+}
+
+#uf-ID {
+    margin: auto auto auto 50px;
 }
 
 #h_side-nav{
@@ -109,6 +127,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     padding: 10px;
 }
+
 
 #mp_titel {
     margin-bottom: 25px;
@@ -174,17 +193,22 @@ a:hover, a:active, .active{
     text-align: left;
 }
 
-#avatar {
-    width: 100px;
+#avatar{
+    width: 20%;
+    height: auto;
+}
+
+
+#logged-avatar, .img-small{
+    width: 100%;
+    height: auto;
+}
+
+.img_widget {
     margin: auto;
     box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
     border-radius: 10px;
     padding: 0;
-}
-
-.img_widget {
-    width: 100%;
-    height: auto;
 }
 
 .form-control {
@@ -225,4 +249,76 @@ button:hover, input[type=submit]:hover {
     color: forestgreen;
 }
 
+.float-right {
+    width: max-content;
+    float: right;
+}
 
+.float-left{
+    width: max-content;
+    float: left;
+}
+
+.no-bullet {
+    list-style-type: none;
+}
+
+
+/**================== welcome.html ===================**/
+
+#tabContainer h4 {
+	color: rgb(83, 104, 138);
+	font-size: 2em;
+}
+
+#mp_tabs{
+    width: 50%;
+    margin: auto auto 40px auto;
+	height:30px;
+	overflow:hidden;
+}
+
+#mp_tabs > ul{
+	font: 1em;
+	list-style:none;
+}
+#mp_tabs ul, #tmp_abs li {
+	margin:0;
+	padding:0;
+}
+
+#mp_tabs > ul > li{
+	margin:0 2px 0 0;
+	padding: 5px 15px;
+	display:block;
+	float:left;
+}
+
+#containers {
+    width: 100%;
+    margin-top: 1.5em;
+}
+
+#containers {
+    text-align: initial;
+	padding:10px 10px 25px;
+	margin:0;
+}
+
+#overvPanel {
+    display: grid;
+    grid-template-columns: 250px auto;
+}
+
+.ovPanelText {
+    grid-column-start: 2;
+}
+
+.optionLink {
+    margin-bottom: 10px;
+    display: contents;
+}
+
+.optionLink:hover {
+    background-color: rgb(80,36,25, 0.05);
+}
