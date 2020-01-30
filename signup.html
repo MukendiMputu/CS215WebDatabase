@@ -2,9 +2,10 @@
 
 <html lang="en">
   <head>
-    <meta char="utf-8">
+    <meta charset="utf-8">
     <title>Conference Romm | Sign up </title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="alternative.js"></script>
   </head>
   <body>
     <!-- container -->
@@ -32,24 +33,25 @@
             <span id="">Upload a picture...</span>
             <div class="panes">
                 <div id="" class="">
-                    <form class="form-validate" method="POST" action="#">
+                    <form name="signup_form" class="form-validate" method="POST" action="#" onsubmit="return signup()">
                         <div class="form-group">
                             <label for="nickname" class="form-label"> Nickname</label>
-                            <input name="nickname" id="nickname" type="text" placeholder="Choose a new nickname" required="" data-msg="Please choose your nickname" class="form-control">
+                            <input name="nickname" id="nickname" type="text" placeholder="Choose a new nickname" data-msg="Please choose your nickname" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="loginUsername" class="form-label"> Email Address</label>
-                            <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-control">
+                            <label for="email" class="form-label"> Email Address</label>
+                            <input name="email" id="email" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="loginPassword" class="form-label"> Password</label>
-                            <input name="loginPassword" id="loginPassword" placeholder="Enter a new password" type="password" required="" data-msg="Please enter your password" class="form-control">
+                            <input name="loginPassword" id="loginPassword" placeholder="Enter a new password" type="password" data-msg="Please enter your password" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="loginPassword2" class="form-label"> Confirm your password</label>
-                            <input name="loginPassword2" id="loginPassword2" placeholder="Cofirm your password" type="password" required="" data-msg="Please enter your password" class="form-control">
+                            <input name="loginPassword2" id="loginPassword2" placeholder="Cofirm your password" type="password" data-msg="Please enter your password" class="form-control">
                         </div>
                         <br>
+                        <div class="invisible"><p>All good!</p></div>
                         <br>
                         <button type="submit" class="btn-primary medium">Sign up</button>
                         <p class="">or <a href="signin.html">Sign in</a></p>

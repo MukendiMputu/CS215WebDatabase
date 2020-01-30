@@ -268,6 +268,14 @@ button:hover, input[type=submit]:hover {
     color: forestgreen;
 }
 
+.danger {
+    color: #DD5013;
+}
+
+.invisible {
+    display: none;
+}
+
 .float-right {
     width: max-content;
     float: right;
