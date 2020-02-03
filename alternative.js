@@ -19,9 +19,9 @@ function signup() {
 	var matchOK = true;
 
 	/* validating function */
-	function validateSignup(item, index) {	
-		
-		// Navigate all the form elements 
+	function validateSignup(item, index) {
+
+		// Navigate all the form elements
 		switch(index) {
 
 			case 0:
@@ -88,12 +88,12 @@ function signup() {
 				}else {
 					matchOK = true;
 				}
-					
-				//if all are ok 
+
+				//if all are ok
 				error = !(nicknameOK && emailOK && passwordOK && matchOK);
 			break;
 
-			default:;	
+			default:;
 		}
 	}
 
