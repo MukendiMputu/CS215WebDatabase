@@ -17,7 +17,6 @@
           <div id="h_side-nav">
             <ul id="side-nav">
               <li><a class="active" >Home</a></li>
-              <li><a href="signin.html">Sign in</a></li>
               <li><a class="btn-primary " href="signup.html#main_pane">Sign up</a></li>
             </ul>
           </div>
@@ -26,13 +25,15 @@
       <div id="banner"></div><!-- end of banner -->
       <div id="section">
         <div id="main_pane">
-          <div id="mp_titel"><h2>Bookings</h2></div>
+          <div id="mp_titel">
+            <h2>Bookings</h2>
+          </div>
           <div id="date_picker">
             <a href="#"><span id="dp_left">&langle;</span></a>
             <span id="dp_date">Today, Jan. 20<sup>th</sup> 2020</span>
             <a href="#"><span id="dp_right">&rangle;</span></a>
           </div>
-          <div id="swiper" class="panes">
+          <div id="swiper">
             <div id="room1" class="card">
               <div >
                 <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg">
@@ -63,38 +64,38 @@
                 magna aliquyam erat, sed diam voluptua.</p>
                 <p><span id="rsv_status" class="warning">unavailable</span><span id="rsvd_by" class="invisible">(John Doe)</span></p>
             </div>
+            <div id="search">
+              <div id="input_pane">
+                <select id="ip_search" name="rooms">
+                  <option value="">choose a room number</option>
+                  <option value="ric214">RIC 214</option>
+                  <option value="ric315">RIC 315</option>
+                  <option value="ric330">RIC 330</option>
+                </select>
+                from: <input type="date" id="start" name="reserv-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" class="form-date">
+                to: <input type="date" id="end" name="reserv-end" value="2018-07-22" min="2018-01-01" max="2018-12-31" class="form-date">
+                <input type="submit" value="SEARCH" class="btn-primary medium">
+              </div>
+            </div> <!-- end of search -->
           </div>
         </div> <!-- end of booking pane -->
-        <div id="search" class="panes">
-          <div id="input_pane">
-            <select id="ip_search" name="rooms">
-              <option value="">choose a room number</option>
-              <option value="ric214">RIC 214</option>
-              <option value="ric315">RIC 315</option>
-              <option value="ric330">RIC 330</option>
-            </select>
-            from: <input type="date" id="start" name="reserv-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" class="form-date">
-            to: <input type="date" id="end" name="reserv-end" value="2018-07-22" min="2018-01-01" max="2018-12-31" class="form-date">
-            <input type="submit" value="SEARCH" class="btn-primary medium">
-          </div>
-        </div> <!-- end of search -->
       </div> <!-- end of section -->
       <div id="login_main">
-        <div id="login" class="card">
+        <div id="login" >
             <form class="form-validate" method="POST" action="welcome.html">
-                <div class="form-group">
-                    <label for="loginUsername" class="form-label"> Email Address</label>
+                <div class="">
+                    <label for="loginUsername" class=""> Email Address</label>
                     <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="loginPassword" class="form-label"> Password</label>
+                <div class="">
+                    <label for="loginPassword" class=""> Password</label>
                     <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" required="" data-msg="Please enter your password" class="form-control"><br>
                     <div id="btn-submit"><button type="submit" class="btn-primary medium">Sign in</button></div>
                 </div>
                     <p id="para_account" >or <a href="signup.html">create a new account</a></bp>
             </form>
         </div>
-    </div><!-- end of event pane -->
+    </div><!-- end of event panel -->
       <div id="footer">
         <div id="f_wrapper">
           <div id="f_map" class="f_box">

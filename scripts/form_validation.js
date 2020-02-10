@@ -24,7 +24,7 @@ function validateNickname(event) {
     };
 }
 
-/* in case the error flag is set, alert the user */
+/* in case the error flag is set, alert the user
 if(error){
 
     alert(error_msg);
@@ -34,4 +34,4 @@ if(error){
 
     alert(ok_msg);
     return false;
-}
+}*/

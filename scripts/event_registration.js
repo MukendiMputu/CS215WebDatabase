@@ -1,5 +1,4 @@
-var form_nickname = document.getElementById("nickname")
-                            .addEventListener("change", validateNickname);
+var form_nickname = document.getElementById("nickname").addEventListener("change", validateNickname, false);
 
 /*  var form_nickname = document.getElementById("email")
                             .addEventListener("change",validateEmail);
