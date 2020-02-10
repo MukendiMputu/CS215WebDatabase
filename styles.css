@@ -142,9 +142,19 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
 }
 
+.panes {
+    padding: 1.8rem 8px 0 30px !important;
+    width: max-content;
+    margin: auto;
+}
 
-#mp_titel {
-    margin-bottom: 25px;
+#login_main {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 100%;
+    margin: 0 50px auto;
 }
 
 #date_picker {
@@ -176,12 +186,6 @@ a {
 a:hover, a:active, .active{
     text-decoration: underline;
     color: #545759;
-}
-
-.panes {
-    padding: 1.8rem 8px 0 30px !important;
-    width: max-content;
-    margin: auto;
 }
 
 #f_wrapper {
@@ -227,6 +231,11 @@ a:hover, a:active, .active{
 #logged-avatar, .img-small{
     width: 100%;
     height: auto;
+}
+
+#btn-submit{
+    padding: 10px 0 0 10px;
+    clear: both;
 }
 
 .img_widget {

@@ -18,7 +18,7 @@
             <ul id="side-nav">
               <li><a class="active" >Home</a></li>
               <li><a href="signin.html">Sign in</a></li>
-              <li><a class="btn-primary" href="signup.html#main_pane">Sign up</a></li>
+              <li><a class="btn-primary " href="signup.html#main_pane">Sign up</a></li>
             </ul>
           </div>
         </div>
@@ -75,7 +75,8 @@
             <input type="submit" value="SEARCH" class="btn-primary medium">
           </div>
         </div> <!-- end of search -->
-        <div id="evt_pane" class="panes">
+
+        <!--<div id="evt_pane" class="panes">
           <div id="evt1" class="card">
             <div class="card_img">
               <span>RIC 214</span>
@@ -97,8 +98,24 @@
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam nonumy eirmod tempor.</p>
           </div>
-        </div><!-- end of event pane -->
+        </div> end of event pane -->
       </div> <!-- end of section -->
+      <div id="login_main">
+        <div id="login" class="card">
+            <form class="form-validate" method="POST" action="welcome.html">
+                <div class="form-group">
+                    <label for="loginUsername" class="form-label"> Email Address</label>
+                    <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword" class="form-label"> Password</label>
+                    <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" required="" data-msg="Please enter your password" class="form-control"><br>
+                    <div id="btn-submit"><button type="submit" class="btn-primary medium">Sign in</button></div>
+                </div>
+                <p class="">or <a href="signup.html">create a new account</a></p>
+            </form>
+        </div>
+    </div><!-- end of event pane -->
       <div id="footer">
         <div id="f_wrapper">
           <div id="f_map" class="f_box">
