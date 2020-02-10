@@ -98,14 +98,14 @@ function signup() {
 	}
 
 	/* in case the error flag is set, alert the user */
-		if(error){
+	if(error){
 
-			alert(error_msg);
-			return false;
+		alert(error_msg);
+		return false;
 
-		}else{
+	}else{
 
-			alert(ok_msg);
-			return false;
+		alert(ok_msg);
+		return false;
 	}
 }
