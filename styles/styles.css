@@ -125,6 +125,14 @@ h1, h2, h3, h4, h5, h6 {
     list-style-type: none;
 }
 
+#rsv_status {
+    
+}
+
+#rsvd_by {
+    font-style: italic;
+}
+
 #side-nav > li {
     float: left;
     margin-left: 15px;
@@ -227,6 +235,9 @@ a:hover, a:active, .active{
     height: auto;
 }
 
+#para_account {
+    padding-left: 10px;
+}
 
 #logged-avatar, .img-small{
     width: 100%;
@@ -291,12 +302,20 @@ button:hover, input[type=submit]:hover {
     color: forestgreen;
 }
 
+.warning {
+    color: #DD8913;
+}
+
 .danger {
-    color: #DD5013;
+    color: #DD2E13;
 }
 
 .invisible {
     display: none;
+}
+
+.visible {
+    display: initial;
 }
 
 .float-right {

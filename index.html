@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Conference Romm | Home </title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
   </head>
   <body>
     <!-- container -->
@@ -36,29 +36,32 @@
             <div id="room1" class="card">
               <div >
                 <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg">
-                <span>RIC 214</span>
+                <a href="#">RIC 214</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
                 magna aliquyam erat, sed diam voluptua.</p>
+              <p><span id="rsv_status" class="danger">booked</span><span id="rsvd_by" class=""> (John Doe)</span><bp>
             </div>
             <div id="room2" class="card">
               <div >
                 <img alt="conference room wood" class="img-small" src="img/conference_wood.jpg">
-                <span>RIC 315</span>
+                <a href="#">RIC 315</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
                 magna aliquyam erat, sed diam voluptua.</p>
+                <p><span id="rsv_status" class="success">free</span><span id="rsvd_by" class="invisible">(John Doe)</span></p>
             </div>
             <div id="room3" class="card">
               <div>
                 <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg">
-                <span>RIC 330</span>
+                <a href="#">RIC 330</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
                 magna aliquyam erat, sed diam voluptua.</p>
+                <p><span id="rsv_status" class="warning">unavailable</span><span id="rsvd_by" class="invisible">(John Doe)</span></p>
             </div>
           </div>
         </div> <!-- end of booking pane -->
@@ -75,30 +78,6 @@
             <input type="submit" value="SEARCH" class="btn-primary medium">
           </div>
         </div> <!-- end of search -->
-
-        <!--<div id="evt_pane" class="panes">
-          <div id="evt1" class="card">
-            <div class="card_img">
-              <span>RIC 214</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam nonumy eirmod tempor.</p>
-          </div>
-          <div id="evt2" class="card">
-            <div class="card_img">
-              <span>RIC 315</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam nonumy eirmod tempor.</p>
-          </div>
-          <div id="evt3" class="card">
-            <div class="card_img">
-              <span>RIC 330</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam nonumy eirmod tempor.</p>
-          </div>
-        </div> end of event pane -->
       </div> <!-- end of section -->
       <div id="login_main">
         <div id="login" class="card">
@@ -112,7 +91,7 @@
                     <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" required="" data-msg="Please enter your password" class="form-control"><br>
                     <div id="btn-submit"><button type="submit" class="btn-primary medium">Sign in</button></div>
                 </div>
-                <p class="">or <a href="signup.html">create a new account</a></p>
+                    <p id="para_account" >or <a href="signup.html">create a new account</a></bp>
             </form>
         </div>
     </div><!-- end of event pane -->
