@@ -42,6 +42,10 @@ body {
     margin: 10px 10px auto auto;
 }
 
+#hamburger, #dropDownLinks{
+    display: none;
+}
+
 #side-nav {
     margin: 0;
     list-style-type: none;

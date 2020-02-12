@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conference Romm | Home </title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <link rel="stylesheet" media="screen and (max-width: 480px)" href="styles/mobiles.css">
+    <link rel="stylesheet" media="screen and (max-width: 414px)" href="styles/mobiles.css">
   </head>
   <body>
-    <!-- container -->
+
+    <!-- [ PAGE CONTAINER ] -->
     <div id="grid">
+
+      <!-- [ HEADER ] -->
       <div id="header">
         <div id="h_navBar">
           <div id="logo" class="float-left">
-            <h1>Conference Room</h1>
+            <h1><a id="text_logo" href="index.html">Conference Room</a></h1>
           </div>
           <div id="h_side-nav">
             <ul id="side-nav">
@@ -22,9 +25,25 @@
               <li><a class="btn-primary " href="signup.html#main_pane">Sign up</a></li>
             </ul>
           </div>
+
+          <!-- [ NAVIGATION LINKS (hidden by default) ] -->
+          <div id="dropDownLinks">
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a class="" href="signup.html#main_pane">Sign up</a>
+          </div>
+
+          <!-- [ HAMBURGER ] -->
+          <a id="hamburger" href="javascript:void(0);" class="icon">
+            <i class="">&#9776</i>
+          </a>
         </div>
-      </div> <!-- end of header -->
-      <div id="banner"></div><!-- end of banner -->
+      </div>
+
+      <!-- [ BANNER ] -->
+      <div id="banner"></div>
+
+      <!-- [ MAIN CONTENT ] -->
       <div id="section">
         <div id="main_pane">
           <div id="mp_titel" class="text-center">
@@ -78,10 +97,12 @@
                 to: <input type="date" id="end" name="reserv-end" value="2018-07-22" min="2018-01-01" max="2018-12-31" class="form-date">
                 <input type="submit" value="SEARCH" class="btn-primary medium">
               </div>
-            </div> <!-- end of search -->
+            </div>
           </div>
-        </div> <!-- end of booking pane -->
-      </div> <!-- end of section -->
+        </div>
+      </div>
+
+      <!-- [ LOGIN ] -->
       <div id="login_main">
         <div id="login" >
             <form class="form-validate" method="POST" action="welcome.html">
@@ -101,7 +122,9 @@
                 </p>
             </form>
         </div>
-    </div><!-- end of event panel -->
+    </div>
+
+    <!-- [ FOOTER ] -->
       <div id="footer">
         <div id="f_wrapper">
           <div id="f_map" class="f_box">
@@ -123,7 +146,9 @@
               magna aliquyam erat, sed diam voluptua.</p>
           </div>
         </div>
-      </div> <!-- end of footer -->
-    </div> <!-- end of container -->
+      </div>
+    </div>
+    <script src="scripts/event_registration.js"></script>
+    <script src="scripts/mobiles.js"></script>
   </body>
 </html>
