@@ -95,13 +95,16 @@ body {
 
 #main_pane {
     display: grid;
-    grid-template-rows: 30px 50px auto auto;
+    grid-template-rows: 30px auto auto auto;
     row-gap: 5px;
     box-shadow: 0 0 1em rgba(0,0,0,0.15);
     /* max-width: 750px; */
     height: 100%;
-    text-align: center;
     padding: 10px;
+}
+
+#avatar_div{
+    margin: 10px 0 20px;
 }
 
 #booking_pane {
@@ -110,7 +113,6 @@ body {
     box-shadow: 0 0 1em rgba(0,0,0,0.15);
     /* max-width: 750px; */
     height: 100%;
-    text-align: center;
     padding: 10px;
 }
 
@@ -126,7 +128,7 @@ body {
 
 #swiper {
     width: max-content;
-    margin: auto;
+    margin: 0 auto;
 }
 
 #search {
@@ -228,15 +230,14 @@ a:hover, a:active, .active{
     height: 200px;
     float: left;
     margin-right: 20px;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15);
     border-radius: 10px;
     padding: 0.5rem;
     text-align: left;
 }
 
 #avatar{
-    width: 20%;
-    height: auto;
+    width: 100px;
 }
 
 #logged-avatar, .img-small{
@@ -251,18 +252,23 @@ a:hover, a:active, .active{
 
 .img_widget {
     margin: auto;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15);
     border-radius: 10px;
     padding: 0;
 }
 
-.form-control {
+.labeledInput {
+    width: 400px;
+    height: 40px;
+}
+
+.form-input {
     float: right;
+    display: initial;
 }
 
 .form-label {
-    float: left;
-    padding: 10px;
+    margin-top: 10px;
 }
 
 .form-group {
@@ -373,7 +379,6 @@ button:hover, input[type=submit]:hover {
 
 #containers {
     text-align: initial;
-	/* padding:10px 10px 25px; */
 }
 
 #overvPanel, #catering, #equipment, #more {
@@ -398,6 +403,10 @@ button:hover, input[type=submit]:hover {
 
 .text-left {
     text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
 }
 
 textarea {
