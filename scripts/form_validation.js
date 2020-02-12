@@ -22,16 +22,18 @@ function validateNickname(event) {
         ok_msg += "Nickname: " + usrNickname + "\n";
         nicknameOK = true;
     };
+
+
+    // in case the error flag is set, alert the user
+    if(error){
+
+        alert(error_msg);
+        return false;
+
+    }else{
+
+        alert(ok_msg);
+        return false;
+    }
+
 }
-
-/* in case the error flag is set, alert the user
-if(error){
-
-    alert(error_msg);
-    return false;
-
-}else{
-
-    alert(ok_msg);
-    return false;
-}*/

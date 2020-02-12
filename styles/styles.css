@@ -120,6 +120,10 @@ body {
     margin: 0 50px auto;
 }
 
+#login div {
+    display: inline-grid;
+}
+
 #swiper {
     width: max-content;
     margin: auto;
@@ -240,7 +244,7 @@ a:hover, a:active, .active{
     height: auto;
 }
 
-#btn-submit{
+.btn-submit{
     padding-top: 10px;
     clear: both;
 }

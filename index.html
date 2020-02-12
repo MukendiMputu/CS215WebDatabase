@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conference Romm | Home </title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="styles/mobiles.css">
@@ -43,7 +44,7 @@
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
                 magna aliquyam erat, sed diam voluptua.</p>
-              <p><span id="rsv_status" class="danger">booked</span><span id="rsvd_by" class=""> (John Doe)</span><bp>
+              <p><span id="rsv_status" class="danger">booked</span><span id="rsvd_by" class=""> (John Doe)</span><br>
             </div>
             <div id="room2" class="card">
               <div >
@@ -90,10 +91,14 @@
                 </div>
                 <div class="">
                     <label for="loginPassword" class=""> Password</label>
-                    <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" required="" data-msg="Please enter your password" class="form-control"><br>
-                    <div id="btn-submit"><button type="submit" class="btn-primary medium">Sign in</button></div>
+                    <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" required="" data-msg="Please enter your password" class="form-control">
                 </div>
-                    <p id="para_account" >or <a href="signup.html">create a new account</a></bp>
+                <br><br>
+                <button type="submit" class="btn-primary medium btn-submit">
+                  Sign in</button>
+                <p id="para_account" >
+                  or <a href="signup.html">create a new account</a>
+                </p>
             </form>
         </div>
     </div><!-- end of event panel -->
