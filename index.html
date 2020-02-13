@@ -86,16 +86,29 @@
                 <p><span id="rsv_status" class="warning">unavailable</span><span id="rsvd_by" class="invisible">(John Doe)</span></p>
             </div>
             <div id="search">
-              <div id="input_pane">
+              <div class="search_flex">
+                <label for="ip_search" class="search_label"> Room: </label>
                 <select id="ip_search" name="rooms">
-                  <option value="">choose a room number</option>
+                  <option value=""> room # </option>
                   <option value="ric214">RIC 214</option>
                   <option value="ric315">RIC 315</option>
                   <option value="ric330">RIC 330</option>
                 </select>
-                from: <input type="date" id="start" name="reserv-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" class="form-date">
-                to: <input type="date" id="end" name="reserv-end" value="2018-07-22" min="2018-01-01" max="2018-12-31" class="form-date">
-                <input type="submit" value="SEARCH" class="btn-primary medium">
+              </div>
+              <div class="search_flex">
+                <label for="booking_date" class="search_label"> Date: </label>
+                <input type="date" id="booking_date" name="reserv-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" class="form-date">
+              </div>
+              <div class="search_flex">
+                <label for="booking_date" class="search_label"> from: </label>
+                <input type="time" id="start_time" name="time-start" value="06:00" min="06:00" max="22:00" step="1800" class="form-date">
+              </div>
+              <div class="search_flex">
+                <label for="booking_date" class="search_label"> to: </label>
+                <input type="time" id="end_time" name="time-end" value="22:00" min="06:00" max="22:00" step="1800" class="form-date">
+              </div>
+              <div>
+                <input type="submit" value="&#x1F50D;" class="circled-button">
               </div>
             </div>
           </div>
