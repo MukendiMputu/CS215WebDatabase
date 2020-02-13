@@ -28,22 +28,22 @@
       <div id="banner"></div><!-- end of banner -->
       <div id="section">
         <div id="main_pane">
-          <div id="mp_titel"><h3>LOGIN</h3></div>
+          <div id="mp_titel" class="text-center"h3>LOGIN</h3></div>
             <div class="panes">
                 <div id="" class="">
                     <form class="form-validate" method="POST" action="welcome.html">
-                        <div class="form-group">
+                        <div class="labeledInput">
                             <label for="loginUsername" class="form-label"> Email Address</label>
-                            <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-control">
+                            <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-input">
                         </div>
-                        <div class="form-group">
+                        <div  class="labeledInput">
                             <label for="loginPassword" class="form-label"> Password</label>
-                            <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" required="" data-msg="Please enter your password" class="form-control">
+                            <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" required="" data-msg="Please enter your password" class="form-input">
+                        </div><br>
+                        <div class="text-center">
+                          <button type="submit" class="btn-primary medium">Sign in</button>
+                          <p class="">or <a href="signup.html">create a new account</a></p>
                         </div>
-                        <br>
-                        <br>
-                        <button type="submit" class="btn-primary medium">Sign in</button>
-                        <p class="">or <a href="signup.html">create a new account</a></p>
                     </form>
                 </div>
             </div><!-- end of event pane -->
