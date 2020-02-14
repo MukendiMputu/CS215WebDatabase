@@ -50,9 +50,9 @@
             <h2>Bookings</h2>
           </div>
           <div id="date_picker" class="text-center">
-            <a href="#"><span id="dp_left">&langle;</span></a>
-            <span id="dp_date">Today, Jan. 20<sup>th</sup> 2020</span>
-            <a href="#"><span id="dp_right">&rangle;</span></a>
+            <a id="dp_left" href="javascript:void(0)"><span>&langle;</span></a>
+            <span id="dp_date"><span id="day"></span> <span id="month">Jan</span>. <span id="date">20</span><sup id="ordinal">th</sup> <span id="year">2020</span></span>
+            <a id="dp_right" href="javascript:void(0)"><span>&rangle;</span></a>
           </div>
           <div id="swiper">
             <div id="room1" class="card">
@@ -161,7 +161,7 @@
         </div>
       </div>
     </div>
-    <script src="scripts/event_registration.js"></script>
-    <script src="scripts/mobiles.js"></script>
   </body>
+  <script src="scripts/date_actualizator.js"></script>
+  <script src="scripts/mobiles.js"></script>
 </html>
