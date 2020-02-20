@@ -1,5 +1,4 @@
-/* var form_nickname = document.getElementById("nickname").addEventListener("change", validateNickname, false); */
-
+var form_nickname = document.querySelector("[name=nickname]").addEventListener("keystroke", validateNickname, false);
 
 
 
