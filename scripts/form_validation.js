@@ -23,7 +23,7 @@ function validateNickname(event) {
         nicknameOK = true;
     };
 
-
+    error = !(nicknameOK)
     // in case the error flag is set, alert the user
     if(error){
 
