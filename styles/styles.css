@@ -298,6 +298,12 @@ a:hover, a:active, .active{
     display: initial;
 }
 
+.input-error {
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 8px;
+}
+
 .form-label {
     margin-top: 10px;
 }
