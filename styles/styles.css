@@ -293,13 +293,35 @@ a:hover, a:active, .active{
     height: 40px;
 }
 
+div.visible p {
+    margin: 0;
+}
+
+ul.error_list {
+    list-style-type: square;
+    padding-left: 15px;
+    margin: 5px 0 0 0;
+}
+
+.label_required {
+    font-size: 8pt;
+}
+
 .form-input {
     float: right;
     display: initial;
 }
 
 .input-error {
-    border: 1px solid red;
+    border: 0.5pt solid #DD2E13;
+    box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.input-success {
+    border: 0.5pt solid #7EA172;
+    box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.15);
     border-radius: 5px;
     padding: 8px;
 }
@@ -353,8 +375,36 @@ button:hover, input[type=submit]:hover {
     width: 50px;
 }
 
+.modal-succes {
+    border: 1px solid rgba(198, 226, 198, 0.50);
+    background-color: rgba(198, 226, 198, 0.50);
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+    margin: 0 0 5px 0;
+    margin: 0 0 15px 0;
+}
+
+.modal-warning {
+    border: 1px solid rgba(228, 214, 198, 0.5);
+    background-color: rgba(228, 214, 198, 0.5);
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+    margin: 0 0 15px 0;
+}
+
+.modal-danger {
+    border: 1px solid rgba(226, 198, 198, 0.5);
+    background-color: rgba(226, 198, 198, 0.5);
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+    margin: 0 0 15px 0;
+}
+
 .success {
-    color: forestgreen;
+    color: #228B22;
 }
 
 .warning {
@@ -370,7 +420,7 @@ button:hover, input[type=submit]:hover {
 }
 
 .visible {
-    display: initial;
+    display: block;
 }
 
 .float-right {
@@ -469,5 +519,5 @@ textarea {
 
 .space {
     height: 10px;
-    background-color: gainsboro;
+    background-color: rgb(220, 220, 220);
 }

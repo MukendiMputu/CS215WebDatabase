@@ -18,7 +18,7 @@
           </div>
           <div id="h_side-nav">
             <ul id="side-nav">
-              <li><a href="index.html" >Home</a></li>
+              <li><a href="index.php" >Home</a></li>
               <li><a href="signin.html">Sign in</a></li>
               <li><a class="active">Sign up</a></li>
             </ul>
@@ -35,33 +35,41 @@
             <span id="">Upload a picture...</span>
           </div>
           <div id="swiper" class="">
-              <div>
+            <div id="succ_mod" class="invisible modal-succes">
+              <p class="label_required success text-center">All good!</p>
+            </div>
+            <div id="war_mod" class="invisible modal-warning">
+              <p class="label_required warning text-center">Careful, our password is weak!</p>
+            </div>
+            <div id="err_mod" class="invisible modal-danger">
+              <span class="label_required danger">The following errors(s) occured:</span>
+              <ul class="error_list label_required danger">
 
-              </div>
-              <form name="signup_form" class="form-validate" method="POST" onsubmit="return Validate()">
+              </ul>
+            </div>
+              <form name="signup_form" class="form-validate" method="POST">
                   <div class="labeledInput">
-                      <label for="nickname" class="form-label"> Nickname</label>
+                      <label for="nickname" class="form-label"> Nickname</label><span class="label_required danger">&nbsp;*</span>
                       <input name="nickname" id="nickname" type="text" placeholder="Choose a new nickname" data-msg="Please choose your nickname" class="form-input">
                   </div>
                   <div class="labeledInput">
-                      <label for="email" class="form-label"> Email Address</label>
-                      <input name="email" id="email" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-input">
+                      <label for="email" class="form-label"> Email Address</label><span class="label_required danger">&nbsp;*</span>
+                      <input name="email" id="email" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-input" >
                   </div>
                   <div class="labeledInput">
-                      <label for="loginPassword" class="form-label"> Password</label>
-                      <input name="loginPassword" id="loginPassword" placeholder="Enter a new password" type="password" data-msg="Please enter your password" class="form-input">
+                      <label for="loginPassword" class="form-label"> Password</label><span class="label_required danger">&nbsp;*</span>
+                      <input name="loginPassword" id="loginPassword" placeholder="Enter a new password" type="password" data-msg="Please enter your password" class="form-input" >
                   </div>
                   <div class="labeledInput">
-                      <label for="loginPassword2" class="form-label"> Confirm your password</label>
-                      <input name="loginPassword2" id="loginPassword2" placeholder="Cofirm your password" type="password" data-msg="Please enter your password" class="form-input">
-                  </div>
+                      <label for="loginPassword2" class="form-label"> Confirm your password</label><span class="label_required danger">&nbsp;*</span>
+                      <input name="loginPassword2" id="loginPassword2" placeholder="Cofirm your password" type="password" data-msg="Please enter your password" class="form-input" >
+                  </div><span style="font-size: 8pt;color: #838383;">Field marked with <span class="label_required danger">&nbsp;*</span> are required</span>
                   <div class="text-center">
                     <br>
                     <button type="submit" class="btn-primary medium">Sign up</button><hr>
                     <p class="">or <a href="signin.html">Sign in</a></p>
                   </div>
                   <br>
-                  <div class="invisible"><p>All good!</p></div>
                   <br>
               </form>
           </div><!-- end of event pane -->

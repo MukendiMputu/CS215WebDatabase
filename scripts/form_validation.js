@@ -1,104 +1,134 @@
+// Unordered list of errors
+var error_list = document.querySelector("ul.error_list");
 
-var error_msg = "The following error(s) occured:\n";
-var ok_msg = "All good!\n";
+// error flags
 var error = true;
-
 var nicknameOK = emailOK = passwordOK = matchOK = true;
 
-// SELECTING ALL ERROR DISPLAY ELEMENTS
-/* var name_error = document.getElementById('name_error');
-var email_error = document.getElementById('email_error');
-var password_error = document.getElementById('password_error'); */
 
-// validation function
-function Validate() {
-  // validate username
-  if (username.value == "") {
-    username.classList.toggle("input-error");
-    document.querySelector("label[for='nickname']").style.color = "red";
-    error_msg += "Username is required\n";
+/*==============[ Form validation function ]==============*/
+
+function Validate(e) {
+
+  error_list.innerHTML = ""; // empty the list to avoid repetition
+  error_list.innerText = "";
+  var myForm = e.currentTarget;
+
+  let li; // variable to hold an error list-item
+
+  // in case of error create li and inject msg
+  if (myForm[0].value == "") {
+    li = document.createElement("li");
+    li.innerHTML += "Username is required";
+    error_list.appendChild(li);
     nicknameOK = false;
 
+  } else {
+    nicknameOK = true;
   }
-  // validate username
-  if (username.value.length < 3) {
-    username.classList.toggle("input-error");
-    document.querySelector("label[for='nickname']").style.color = "red";
-    error_msg = "Username must be at least 3 characters\n";
-    nicknameOK = false;
 
-  }
-  // validate email
-  if (email.value == "") {
-    email.classList.toggle("input-error");
-    document.querySelector("label[for='email']").style.color = "red";
-    error_msg += "Email is required\n";
+  if (myForm[1].value == "") {
+    li = document.createElement("li");
+    li.innerHTML  += "Email is required";
+    error_list.appendChild(li);
     emailOK = false;
 
+  } else {
+    emailOK = true;
   }
-  // validate password
-  if (password.value == "") {
-    password.classList.toggle("input-error");
-    document.querySelector("label[for='loginPassword']").style.color = "red";
 
-    error_msg += "Password is required\n";
+  if (myForm[2].value == "") {
+    li = document.createElement("li");
+    li.innerHTML  += "Password is required";
+    error_list.appendChild(li);
     passwordOK = false;
 
+  } else {
+    error_list.removeChild
+    passwordOK = true;
   }
+
   // check if the two passwords match
-  if (password.value != password_confirm.value) {
-    password.classList.toggle("input-error");
-    document.querySelector("label[for='loginPassword2']").style.color = "red";
-
-    error_msg += "The two passwords do not match\n";
+  if (myForm[3].value == "") {
+    li = document.createElement("li");
+    li.innerHTML  += "The two passwords do not match";
+    error_list.appendChild(li);
     matchOK = false;
+
+  } else {
+    matchOK = true;
   }
 
+  // in case the error flag is set, show to error summary
   error = !(nicknameOK && emailOK && passwordOK && matchOK);
+  if(error){
+    document.querySelector("#err_mod").classList.replace("invisible", "visible");
+    document.querySelector("#succ_mod").classList.replace("visible", "invisible");
+      e.preventDefault();
+      return false;
+  // or show success msg
+  }else{
+      document.querySelector("#err_mod").classList.replace("visible", "invisible");
+      document.querySelector("#succ_mod").classList.replace("invisible", "visible");
+      e.preventDefault();
+      return false;
+  }
 
-    /* in case the error flag is set, alert the user */
-    if(error){
-
-        alert(error_msg);
-        error = true;
-        return false;
-
-    }else{
-
-        alert(ok_msg);
-        return false;
-    }
 }
 
-// event handler functions
+/*==========[ Event handler functions for each input element ]================*/
+
 function verifyName() {
-  if (username.value != "") {
-   username.classList.toggle("input-error");
-   document.querySelector("label[for='nickname']").style.color = "#5e6e66";
-   //name_error.innerHTML = "";
-   return true;
+  const regex = /^[a-zA-Z][a-zA-Z]+\d*(?!\s)[a-zA-Z]+\d*$/;
+
+  if (!regex.test(nickname.value)) {
+    nickname.classList.add("input-error");
+    nicknameOK = false;
+
+  }else if (nickname.value.length < 3) {
+    nickname.classList.add("input-error");
+    nicknameOK = false;
+
+  }else {
+    nickname.classList.replace("input-error", "input-success");
+    nicknameOK = true;
   }
 }
+
 function verifyEmail() {
-  if (email.value != "") {
-  	email.classList.toggle("input-error");
-  	document.querySelector("label[for='email']").style.color = "#5e6e66";
-  	//email_error.innerHTML = "";
-  	return true;
+  const emailRegex = /^[a-zA-Z0-9\.]+@[a-zA-Z0-9]+((\-)?[a-zA-Z0-9]+(\.)?[a-zA-Z0-9]{2,6}?)?\.[a-zA-Z]{2,6}$/;
+
+  if (!emailRegex.test(email.value)) {
+    email.classList.add("input-error");
+    emailOK = false;
+
+  }else {
+    email.classList.replace("input-error", "input-success");
+    emailOK = true;
   }
 }
+
 function verifyPwd() {
-  if (password.value != "") {
-  	password.classList.toggle("input-error");
-  	document.getElementById('pass_confirm_div').style.color = "#5e6e66";
-  	document.querySelector("label[for='loginPassword']").style.color = "#5e6e66";
-  	//password_error.innerHTML = "";
-  	return true;
+  const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){7,}$/;
+
+  if (!passRegex.test(password.value)) {
+    password.classList.add("input-error");
+    passwordOK = false;
+
+  } else if (password.value.length < 7) {
+    password.classList.add("input-error");
+    passwordOK = false;
+
+  } else {
+    password.classList.replace("input-error", "input-success");
   }
-  if (password.value === password_confirm.value) {
-  	password.classList.toggle("input-error");
-  	document.querySelector("label[for='loginPassword2']").style.color = "#5e6e66";
-  	//password_error.innerHTML = "";
-  	return true;
+
+}
+
+function verifyMatch() {
+  if (password.value !== password_confirm.value) {
+  	password_confirm.classList.add("input-error");
+  } else {
+    password_confirm.classList.replace("input-error", "input-success");
   }
 }
