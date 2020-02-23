@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <meta char="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conference Romm | Sign up </title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
@@ -43,19 +43,26 @@
                 <h3>Edit note for <span id="roomID">RIC 330</span></h3>
             </div>
             <div id="overvPanel">
-                <div  class="optionLink">
+                <div  class="optionItem">
                     <div class="card card-fixed">
                         <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg">
                         <span>RIC 330</span>
                     </div>
-                    <div class="text-left">
-                        <form class="form-validate" method="POST" action="welcome.html">
-                            <label for="descriptText" class="">Note:</label><br>
-                            <textarea id="dptText" name="descriptText" required="on" rows="4" cols="33">Hypertext Markup Language. Controls the structure and semantics of web pages. Tags are used to mark up elements and denote content type.
-                            </textarea>
-                            <br>
-                            <p class="float-right"><a href="#">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
-                        </form>
+                    <div id="booking-form">
+                      <div id="succ_mod" class="invisible modal-succes">
+                        <p class="label_required success text-center">Saved!</p>
+                      </div>
+                      <div id="err_mod" class="invisible modal-danger">
+                        <ul class="error_list label_required danger">
+                        </ul>
+                      </div>
+                      <form class="form-validate" method="POST" action="welcome.html">
+                          <input type="text" id="bookingID" value="1" hidden>
+                          <label for="descriptText" class="">Note:</label><br>
+                          <textarea id="dptText" name="descriptText" required="on" rows="5" cols="50" maxlength="500"></textarea>
+                          <br><span id="charCount">(<span>0</span>/500 characters )</span>
+                          <p class="text-right"><a href="welcome.html">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
+                      </form>
                     </div>
                 </div>
             </div>
@@ -63,4 +70,5 @@
       </div> <!-- end of section -->
     </div> <!-- end of container -->
   </body>
+  <script src="scripts/note_validation.js"></script>
 </html>

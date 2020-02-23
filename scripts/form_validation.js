@@ -1,3 +1,19 @@
+// Signup form (event registration)
+var myForm = document.querySelector("form").addEventListener("submit", Validate, false);
+
+// Selecting all the input elements of the signup form
+var nickname = document.forms["signup_form"]["nickname"];
+var email = document.forms["signup_form"]["email"];
+var password = document.forms["signup_form"]["loginPassword"];
+var password_confirm = document.forms["signup_form"]["loginPassword2"];
+
+// Registrating the event listener signup input elements
+nickname.addEventListener("keyup", verifyName, false);
+email.addEventListener("keyup", verifyEmail, false);
+password.addEventListener("keyup", verifyPwd, false);
+password_confirm.addEventListener("keyup", verifyMatch, false);
+
+
 // Unordered list of errors
 var error_list = document.querySelector("ul.error_list");
 
@@ -11,7 +27,6 @@ var nicknameOK = emailOK = passwordOK = matchOK = true;
 function Validate(e) {
 
   error_list.innerHTML = ""; // empty the list to avoid repetition
-  error_list.innerText = "";
   var myForm = e.currentTarget;
 
   let li; // variable to hold an error list-item
@@ -44,7 +59,6 @@ function Validate(e) {
     passwordOK = false;
 
   } else {
-    error_list.removeChild
     passwordOK = true;
   }
 
@@ -112,10 +126,6 @@ function verifyPwd() {
   const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){7,}$/;
 
   if (!passRegex.test(password.value)) {
-    password.classList.add("input-error");
-    passwordOK = false;
-
-  } else if (password.value.length < 7) {
     password.classList.add("input-error");
     passwordOK = false;
 

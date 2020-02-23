@@ -127,10 +127,6 @@ body {
     margin: 0 50px auto;
 }
 
-#login div {
-    display: inline-grid;
-}
-
 #swiper {
     width: max-content;
     margin: 0 auto;
@@ -490,10 +486,13 @@ button:hover, input[type=submit]:hover {
     grid-column-start: 2;
 }
 
-.optionLink {
+.optionItem {
     border-bottom: 1px solid gainsboro;
     padding-bottom: 10px;
     grid-column: 1 / 3;
+}
+
+.optionLink {
 }
 
 .optionLink:hover {
@@ -508,13 +507,28 @@ button:hover, input[type=submit]:hover {
     text-align: center !important;
 }
 
+.text-right {
+    text-align: right !important;
+}
+
+#charCount {
+    color: #7EA172;
+    display: block;
+    font-size: 8pt;
+}
+
+#booking-form {
+    width: max-content;
+    float: left;
+}
+
 textarea {
     padding: 10px;
     line-height: 1.5;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px #999;
-    resize: vertical;
+    resize: none;
 }
 
 .space {

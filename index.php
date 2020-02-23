@@ -118,22 +118,25 @@
       <!-- [ LOGIN ] -->
       <div id="login_main">
         <div id="login" >
-            <form class="form-validate" method="POST" action="welcome.html">
-                <div class="">
-                    <label for="loginUsername" class=""> Email Address</label>
-                    <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-control">
-                </div>
-                <div class="">
-                    <label for="loginPassword" class=""> Password</label>
-                    <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" required="" data-msg="Please enter your password" class="form-control">
-                </div>
-                <br><br>
-                <button type="submit" class="btn-primary medium btn-submit">
-                  Sign in</button>
-                <p id="para_account" >
-                  or <a href="signup.html">create a new account</a>
-                </p>
-            </form>
+          <div id="err_mod" class="invisible modal-danger">
+            <span class="label_required danger">Email or password has wrong format!</span>
+          </div>
+          <form class="form-validate" method="POST" action="welcome.html">
+              <div class="">
+                  <label for="loginUsername" class=""> Email Address</label>
+                  <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-control">
+              </div>
+              <div class="">
+                  <label for="loginPassword" class=""> Password</label>
+                  <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" data-msg="Please enter your password" class="form-control">
+              </div>
+              <br><br>
+              <button type="submit" class="btn-primary medium btn-submit">
+                Sign in</button>
+              <p id="para_account" >
+                or <a href="signup.html">create a new account</a>
+              </p>
+          </form>
         </div>
     </div>
 
@@ -162,6 +165,7 @@
       </div>
     </div>
   </body>
+  <script src="scripts/signin_validation.js"></script>
   <script src="scripts/date_actualizator.js"></script>
   <script src="scripts/mobiles.js"></script>
 </html>
