@@ -2,11 +2,11 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <link rel="stylesheet" media="screen and (max-width: 480px)" href="styles/mobiles.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 480px)" href="styles/mobiles.css"/>
   </head>
   <body>
     <!-- container -->
@@ -30,9 +30,9 @@
         <div id="main_pane">
           <div id="mp_titel" class="text-center"><h3>CREATE YOUR ACCOUNT</h3></div>
           <div id="avatar_div" class="text-center">
-            <img id="avatar" class="img_widget" src="img/avatar_default.png">
-            <br>
-            <span id="">Upload a picture...</span>
+            <img alt="avatar image" id="avatar" class="img_widget" src="img/avatar_default.png"/>
+            <br/>
+            <span>Upload a picture...</span>
           </div>
           <div id="swiper" class="">
             <div id="succ_mod" class="invisible modal-succes">
@@ -44,37 +44,38 @@
             <div id="err_mod" class="invisible modal-danger">
               <span class="label_required danger">The following errors(s) occured:</span>
               <ul class="error_list label_required danger">
-
+                <li></li>
               </ul>
             </div>
-              <form name="signup_form" class="form-validate" method="POST">
+              <form name="signup_form" class="form-validate" method="post" action="">
                   <div class="labeledInput">
                       <label for="nickname" class="form-label"> Nickname</label><span class="label_required danger">&nbsp;*</span>
-                      <input name="nickname" id="nickname" type="text" placeholder="Choose a new nickname" data-msg="Please choose your nickname" class="form-input">
+                      <input name="nickname" id="nickname" type="text" placeholder="Choose a new nickname" data-msg="Please choose your nickname" class="form-input"/>
                   </div>
                   <div class="labeledInput">
                       <label for="email" class="form-label"> Email Address</label><span class="label_required danger">&nbsp;*</span>
-                      <input name="email" id="email" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-input" >
+                      <input name="email" id="email" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-input" />
                   </div>
                   <div class="labeledInput">
                       <label for="loginPassword" class="form-label"> Password</label><span class="label_required danger">&nbsp;*</span>
-                      <input name="loginPassword" id="loginPassword" placeholder="Enter a new password" type="password" data-msg="Please enter your password" class="form-input" >
+                      <input name="loginPassword" id="loginPassword" placeholder="Enter a new password" type="password" data-msg="Please enter your password" class="form-input" />
                   </div>
                   <div class="labeledInput">
                       <label for="loginPassword2" class="form-label"> Confirm your password</label><span class="label_required danger">&nbsp;*</span>
-                      <input name="loginPassword2" id="loginPassword2" placeholder="Cofirm your password" type="password" data-msg="Please enter your password" class="form-input" >
+                      <input name="loginPassword2" id="loginPassword2" placeholder="Cofirm your password" type="password" data-msg="Please enter your password" class="form-input" />
                   </div><span style="font-size: 8pt;color: #838383;">Field marked with <span class="label_required danger">&nbsp;*</span> are required</span>
                   <div class="text-center">
-                    <br>
-                    <button type="submit" class="btn-primary medium">Sign up</button><hr>
+                    <br/>
+                    <button type="submit" class="btn-primary medium">Sign up</button><hr/>
                     <p class="">or <a href="signin.html">Sign in</a></p>
                   </div>
-                  <br>
-                  <br>
+                  <br/>
+                  <br/>
               </form>
-          </div><!-- end of event pane -->
-      </div> <!-- end of section -->
-    </div> <!-- end of container -->
+            </div><!-- end of event pane -->
+        </div> <!-- end of section -->
+      </div> <!-- end of container -->
+    </div>
+  <script type="text/javascript" src="/scripts/form_validation.js"></script>
   </body>
-  <script src="/scripts/form_validation.js"></script>
 </html>

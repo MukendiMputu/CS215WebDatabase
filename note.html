@@ -2,11 +2,11 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <link rel="stylesheet" media="screen and (max-width: 480px)" href="styles/mobiles.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 480px)" href="styles/mobiles.css"/>
   </head>
   <body>
     <!-- container -->
@@ -27,13 +27,13 @@
       </div> <!-- end of header -->
       <div id="user-info">
           <div id="user-info-pane">
-                <img id="logged-avatar" width="200" class="img_widget" src="img/avatar_default.png">
-                <br>
+                <img alt="thumbnail of the booked room" id="logged-avatar" width="200" class="img_widget" src="img/avatar_default.png" />
+                <br />
                 <a href="#">Edit profile</a>
           </div>
           <div id="uf-ID" class=" float-left">
               <h2>Joe Pepperman</h2>
-              <span>Nickname</span><br>
+              <span>Nickname</span><br />
               <span>joe.pepperman@example.com</span>
           </div>
       </div><!-- end of user-info -->
@@ -45,7 +45,7 @@
             <div id="overvPanel">
                 <div  class="optionItem">
                     <div class="card card-fixed">
-                        <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg">
+                        <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg" />
                         <span>RIC 330</span>
                     </div>
                     <div id="booking-form">
@@ -54,13 +54,14 @@
                       </div>
                       <div id="err_mod" class="invisible modal-danger">
                         <ul class="error_list label_required danger">
+                          <li></li>
                         </ul>
                       </div>
-                      <form class="form-validate" method="POST" action="welcome.html">
-                          <input type="text" id="bookingID" value="1" hidden>
-                          <label for="descriptText" class="">Note:</label><br>
-                          <textarea id="dptText" name="descriptText" required="on" rows="5" cols="50" maxlength="500"></textarea>
-                          <br><span id="charCount">(<span>0</span>/500 characters )</span>
+                      <form class="form-validate" method="post" action="welcome.html">
+                          <input type="text" id="bookingID" hidden />
+                          <label for="dptText" class="">Note:</label><br />
+                          <textarea id="dptText" name="descriptText" required rows="5" cols="50" maxlength="500"></textarea>
+                          <br /><span id="charCount">(<span>0</span>/500 characters )</span>
                           <p class="text-right"><a href="welcome.html">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
                       </form>
                     </div>
@@ -69,6 +70,6 @@
         </div><!-- end of event panes -->
       </div> <!-- end of section -->
     </div> <!-- end of container -->
+  <script type="text/javascript" src="scripts/note_validation.js"></script>
   </body>
-  <script src="scripts/note_validation.js"></script>
 </html>

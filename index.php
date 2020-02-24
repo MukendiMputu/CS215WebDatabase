@@ -2,11 +2,11 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Room | Home </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <link rel="stylesheet" media="screen and (max-width: 414px)" href="styles/mobiles.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 414px)" href="styles/mobiles.css"/>
   </head>
   <body>
 
@@ -35,7 +35,7 @@
 
           <!-- [ HAMBURGER ] -->
           <a id="hamburger" href="javascript:void(0);" class="icon">
-            <i class="">&#9776</i>
+            <i class="">&#9776;</i>
           </a>
         </div>
       </div>
@@ -57,33 +57,33 @@
           <div id="swiper">
             <div id="room1" class="card">
               <div >
-                <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg">
+                <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg"/>
                 <a href="#">RIC 214</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
                 magna aliquyam erat, sed diam voluptua.</p>
-              <p><span id="rsv_status" class="danger">booked</span><span id="rsvd_by" class=""> (John Doe)</span><br>
+              <p><span class="danger">booked</span><span  class=""> (John Doe)</span><br /></p>
             </div>
             <div id="room2" class="card">
               <div >
-                <img alt="conference room wood" class="img-small" src="img/conference_wood.jpg">
+                <img alt="conference room wood" class="img-small" src="img/conference_wood.jpg"/>
                 <a href="#">RIC 315</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
                 magna aliquyam erat, sed diam voluptua.</p>
-                <p><span id="rsv_status" class="success">free</span><span id="rsvd_by" class="invisible">(John Doe)</span></p>
+                <p><span class="success">free</span><span  class="invisible">(John Doe)</span></p>
             </div>
             <div id="room3" class="card">
               <div>
-                <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg">
+                <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg"/>>
                 <a href="#">RIC 330</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                 sed diam nonumy eirmod tempor invidunt ut labore et dolore
                 magna aliquyam erat, sed diam voluptua.</p>
-                <p><span id="rsv_status" class="warning">unavailable</span><span id="rsvd_by" class="invisible">(John Doe)</span></p>
+                <p><span class="warning">unavailable</span><span  class="invisible">(John Doe)</span></p>
             </div>
             <div id="search">
               <div class="search_flex">
@@ -97,18 +97,18 @@
               </div>
               <div class="search_flex">
                 <label for="booking_date" class="search_label"> Date: </label>
-                <input type="date" id="booking_date" name="reserv-start" value="2018-07-22" min="1999-01-01" max="2999-12-31" class="form-date">
+                <input type="date" id="booking_date" name="reserv-start" value="2018-07-22" min="1999-01-01" max="2999-12-31" class="form-date"/>
               </div>
               <div class="search_flex">
                 <label for="booking_date" class="search_label"> from: </label>
-                <input type="time" id="start_time" name="time-start" value="06:00" min="06:00" max="22:00" step="1800" class="form-date">
+                <input type="time" id="start_time" name="time-start" value="06:00" min="06:00" max="22:00" step="1800" class="form-date"/>
               </div>
               <div class="search_flex">
                 <label for="booking_date" class="search_label"> to: </label>
-                <input type="time" id="end_time" name="time-end" value="22:00" min="06:00" max="22:00" step="1800" class="form-date">
+                <input type="time" id="end_time" name="time-end" value="22:00" min="06:00" max="22:00" step="1800" class="form-date"/>
               </div>
               <div>
-                <input type="submit" value="&#x1F50D;" class="circled-button">
+                <input type="submit" value="&#x1F50D;" class="circled-button"/>
               </div>
             </div>
           </div>
@@ -121,16 +121,16 @@
           <div id="err_mod" class="invisible modal-danger">
             <span class="label_required danger">Email or password has wrong format!</span>
           </div>
-          <form class="form-validate" method="POST" action="welcome.html">
+          <form class="form-validate" method="post" action="welcome.html">
               <div class="">
                   <label for="loginUsername" class=""> Email Address</label>
-                  <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-control">
+                  <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-control"/>
               </div>
               <div class="">
                   <label for="loginPassword" class=""> Password</label>
-                  <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" data-msg="Please enter your password" class="form-control">
+                  <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" data-msg="Please enter your password" class="form-control"/>
               </div>
-              <br><br>
+              <br /><br />
               <button type="submit" class="btn-primary medium btn-submit">
                 Sign in</button>
               <p id="para_account" >
@@ -145,8 +145,8 @@
         <div id="f_wrapper">
           <div id="f_map" class="f_box">
             <h3>Location</h3>
-            <p>Lorem ipsum dolor sit amet<br>consetetur sadipscing elitr,<br>
-              sed diam nonumy eirmod tempor <br>invidunt ut labore et dolore<br>
+            <p>Lorem ipsum dolor sit amet<br />consetetur sadipscing elitr,<br />
+              sed diam nonumy eirmod tempor <br />invidunt ut labore et dolore<br />
               magna aliquyam erat, sed diam voluptua.</p>
           </div>
           <div id="f_cont" class="f_box">
@@ -164,8 +164,8 @@
         </div>
       </div>
     </div>
+  <script type="text/javascript" src="scripts/signin_validation.js"></script>
+  <script type="text/javascript" src="scripts/date_actualizator.js"></script>
+  <script type="text/javascript" src="scripts/mobiles.js"></script>
   </body>
-  <script src="scripts/signin_validation.js"></script>
-  <script src="scripts/date_actualizator.js"></script>
-  <script src="scripts/mobiles.js"></script>
 </html>
