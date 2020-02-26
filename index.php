@@ -120,15 +120,33 @@
                   $name = "John Doe";
                   echo say_hello_to($name);
               ?>
+
               <!-- Multiple return values -->
               <?php
                   function add_sub($val1, $val2) {
                     $add = $val1 + $val2;
                     $subt = $val1 - $val2;
-                    return $add;
+                    return array($add, $subt);
+                  }
+                  list($sum, $diff) = add_sub(10, 5);
+                  echo "Add: " . $sum . "<br/>";
+                  echo "Subt: " . $diff . "<br/>";
+              ?>
+              <!-- Global scope -->
+              <?php
+                  $bar = "outside";
+
+                  function foo($mandatorFirst, $bar="default") {
+                    global $bar;
+                    if(isset($bar)){
+                      echo "In foo: " . $bar . "<br/>";
+                    }
+                    $bar = "inside";
                   }
 
-                  echo add_sub(10, 5);
+                  echo "Outside: " . $bar . "<br/>";
+                  foo($bar, null);
+                  echo "Inside: " . $bar . "<br/>";
               ?>
             </div>
           </div>
