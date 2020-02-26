@@ -77,7 +77,7 @@
             </div>
             <div id="room3" class="card">
               <div>
-                <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg"/>>
+                <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg"/>
                 <a href="#">RIC 330</a>
               </div>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -112,7 +112,11 @@
               </div>
             </div>
             <div id="php_testPane">
+              <?php /* phpinfo();  */?>
               <?php
+                  ini_set('display_errors', 'On');
+                  error_reporting(E_ALL & ~E_DEPRECATED);
+
                   function say_hello_to($name) {
                     return "Hello {$name}, welcome to our webpage!<br/>";
                   }
@@ -123,6 +127,7 @@
 
               <!-- Multiple return values -->
               <?php
+
                   function add_sub($val1, $val2) {
                     $add = $val1 + $val2;
                     $subt = $val1 - $val2;
@@ -142,6 +147,7 @@
                       echo "In foo: " . $bar . "<br/>";
                     }
                     $bar = "inside";
+
                   }
 
                   echo "Outside: " . $bar . "<br/>";
