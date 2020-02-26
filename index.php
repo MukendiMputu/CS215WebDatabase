@@ -126,17 +126,20 @@
               ?>
 
               <!-- Multiple return values -->
-              <?php
+              <pre><?php
 
                   function add_sub($val1, $val2) {
                     $add = $val1 + $val2;
                     $subt = $val1 - $val2;
                     return array($add, $subt);
                   }
-                  list($sum, $diff) = add_sub(10, 5);
+                  var_dump(add_sub(10, 5));
+                  /* echo "<pre> Result: " . print_r(add_sub(10, 5)) . "</pre>"; */
+
+                  /* list($sum, $diff) = add_sub(10, 5);
                   echo "Add: " . $sum . "<br/>";
-                  echo "Subt: " . $diff . "<br/>";
-              ?>
+                  echo "Subt: " . $diff . "<br/>"; */
+              ?></pre>
               <!-- Global scope -->
               <?php
                   $bar = "outside";
@@ -153,6 +156,9 @@
                   echo "Outside: " . $bar . "<br/>";
                   foo($bar, null);
                   echo "Inside: " . $bar . "<br/>";
+                  /* echo print_r(get_defined_constants());
+                  echo print_r(get_defined_functions()); */
+                  print_r(get_defined_vars());
               ?>
             </div>
           </div>
