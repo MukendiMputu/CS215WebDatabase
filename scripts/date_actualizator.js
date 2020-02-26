@@ -3,7 +3,7 @@ var todaysDate = new Date();
 
 const SHORTMONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-const SHORTDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const SHORTDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 var dayOfWeek = document.querySelector("#day");
 var date = document.querySelector("#date");
@@ -16,29 +16,29 @@ var rightArrow = document.querySelector("#dp_right").addEventListener("click", f
 
 function backward(event) {
     // Fetch the date in Milliseconds since Midnight Jan 1. 1970
-    var newDate = new Date(document.querySelector("#date").innerText, SHORTMONTHS.indexOf(document.querySelector("#month").innerText), document.querySelector("#date").innerText).valueOf() * -1;
+    let day = document.querySelector("#date").innerText;
+    let month = SHORTMONTHS.indexOf(document.querySelector("#month").innerText);
+    let year = document.querySelector("#year").innerText;
 
-    var dayInMillisec = 1000 * 60 * 60 * 24;
-    newDate -= dayInMillisec ;
+    let shownDate = new Date(year, month, day);
 
-    var d = new Date();
-    d.setTime(newDate);
+    shownDate.setDate(shownDate.getDate() -1);
 
     adjustSup();
-    setDateElement(d);
+    setDateElement(shownDate);
 }
 
 function forward(event) {
-    var newDate = new Date(document.querySelector("#date").innerText, SHORTMONTHS.indexOf(document.querySelector("#month").innerText), document.querySelector("#date").innerText).valueOf() * -1;
+    let day = document.querySelector("#date").innerText;
+    let month = SHORTMONTHS.indexOf(document.querySelector("#month").innerText);
+    let year = document.querySelector("#year").innerText;
 
-    var dayInMillisec = 1000 * 60 * 60 * 24;
-    newDate += dayInMillisec ;
+    let shownDate = new Date(year, month, day);
 
-    var d = new Date();
-    d.setTime(newDate);
+    shownDate.setDate(shownDate.getDate() + 1);
 
     adjustSup();
-    setDateElement(d);
+    setDateElement(shownDate);
 }
 
 function adjustSup() {
@@ -60,7 +60,10 @@ function adjustSup() {
 
 function setDateElement (dateToSet) {
     var full_date = dateToSet
-    dayOfWeek.innerHTML = full_date == Date()? "Today " + SHORTDAYS[full_date.getDay()-1] + "," : SHORTDAYS[full_date.getDay()-1] + ",";
+    dayOfWeek.innerHTML = full_date == Date()? 
+    "Today " + SHORTDAYS[full_date.getDay()] + "," : 
+    SHORTDAYS[full_date.getDay()] + ",";
+
     date.innerHTML = full_date.getDate();
     month.innerHTML = SHORTMONTHS[full_date.getMonth()];
     year.innerHTML = full_date.getFullYear();
