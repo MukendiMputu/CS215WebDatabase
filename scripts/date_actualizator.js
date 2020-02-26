@@ -24,8 +24,8 @@ function backward(event) {
 
     shownDate.setDate(shownDate.getDate() -1);
 
-    adjustSup();
     setDateElement(shownDate);
+    adjustSup();
 }
 
 function forward(event) {
@@ -37,20 +37,20 @@ function forward(event) {
 
     shownDate.setDate(shownDate.getDate() + 1);
 
-    adjustSup();
     setDateElement(shownDate);
+    adjustSup();
 }
 
 function adjustSup() {
-    if (date.innerHTML == 1 || date.innerHTML == 21 || date.innerHTML == 31) {
+    if (date.innerHTML === "1" || date.innerHTML === "21" || date.innerHTML === "31") {
 
         document.querySelector("#ordinal").innerHTML = "st";
 
-    } else if (date.innerHTML == 2 || date.innerHTML == 22) {
+    } else if (date.innerHTML === "2" || date.innerHTML === "22") {
 
         document.querySelector("#ordinal").innerHTML = "nd";
 
-    } else if (date.innerHTML == 3 || date.innerHTML == 23) {
+    } else if (date.innerHTML === "3" || date.innerHTML === "23") {
 
         document.querySelector("#ordinal").innerHTML = "rd";
     }else{
