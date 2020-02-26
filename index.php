@@ -111,6 +111,26 @@
                 <input type="submit" value="&#x1F50D;" class="circled-button"/>
               </div>
             </div>
+            <div id="php_testPane">
+              <?php
+                  function say_hello_to($name) {
+                    return "Hello {$name}, welcome to our webpage!<br/>";
+                  }
+
+                  $name = "John Doe";
+                  echo say_hello_to($name);
+              ?>
+              <!-- Multiple return values -->
+              <?php
+                  function add_sub($val1, $val2) {
+                    $add = $val1 + $val2;
+                    $subt = $val1 - $val2;
+                    return $add;
+                  }
+
+                  echo add_sub(10, 5);
+              ?>
+            </div>
           </div>
         </div>
       </div>
