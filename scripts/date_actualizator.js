@@ -25,7 +25,7 @@ function backward(event) {
     shownDate.setDate(shownDate.getDate() -1);
 
     setDateElement(shownDate);
-    adjustSup();
+    adjustOrdinal();
 }
 
 function forward(event) {
@@ -38,10 +38,10 @@ function forward(event) {
     shownDate.setDate(shownDate.getDate() + 1);
 
     setDateElement(shownDate);
-    adjustSup();
+    adjustOrdinal();
 }
 
-function adjustSup() {
+function adjustOrdinal() {
     if (date.innerHTML === "1" || date.innerHTML === "21" || date.innerHTML === "31") {
 
         document.querySelector("#ordinal").innerHTML = "st";
@@ -60,8 +60,8 @@ function adjustSup() {
 
 function setDateElement (dateToSet) {
     var full_date = dateToSet
-    dayOfWeek.innerHTML = full_date == Date()? 
-    "Today " + SHORTDAYS[full_date.getDay()] + "," : 
+    dayOfWeek.innerHTML = full_date == Date()?
+    "Today " + SHORTDAYS[full_date.getDay()] + "," :
     SHORTDAYS[full_date.getDay()] + ",";
 
     date.innerHTML = full_date.getDate();
@@ -70,4 +70,4 @@ function setDateElement (dateToSet) {
 
 }
 setDateElement(todaysDate);
-adjustSup();
+adjustOrdinal();
