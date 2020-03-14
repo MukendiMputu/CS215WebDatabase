@@ -195,7 +195,8 @@
         <div id="f_wrapper">
           <div id="f_map" class="f_box">
             <h3>Location</h3><br/>
-            <div id="googleMap" style="width:100%;height:200px;"></div>
+            <!-- <div id="googleMap" style="width:100%;height:200px;"></div> -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d635.5429232793771!2d-104.59192517074499!3d50.41927265322165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x531ea09ada48e6a1%3A0x8cb5b5fcdcaef9af!2sClassroom%20Building%20(CL)!5e0!3m2!1sen!2sca!4v1584222510329!5m2!1sen!2sca" width="100%" height="200" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
           <div id="f_cont" class="f_box">
             <h3>Contact</h3>
