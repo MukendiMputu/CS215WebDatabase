@@ -194,10 +194,8 @@
       <div id="footer">
         <div id="f_wrapper">
           <div id="f_map" class="f_box">
-            <h3>Location</h3>
-            <p>Lorem ipsum dolor sit amet<br />consetetur sadipscing elitr,<br />
-              sed diam nonumy eirmod tempor <br />invidunt ut labore et dolore<br />
-              magna aliquyam erat, sed diam voluptua.</p>
+            <h3>Location</h3><br/>
+            <div id="googleMap" style="width:100%;height:200px;"></div>
           </div>
           <div id="f_cont" class="f_box">
             <h3>Contact</h3>
@@ -217,5 +215,6 @@
   <script type="text/javascript" src="scripts/signin_validation.js"></script>
   <script type="text/javascript" src="scripts/date_actualizator.js"></script>
   <script type="text/javascript" src="scripts/mobiles.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2oNtRhnfGNgG_yQUNmBNa1kXJnNkzzp4&callback=myMap"></script>
   </body>
 </html>
