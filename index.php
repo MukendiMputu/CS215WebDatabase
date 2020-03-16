@@ -216,6 +216,6 @@
   <script type="text/javascript" src="scripts/signin_validation.js"></script>
   <script type="text/javascript" src="scripts/date_actualizator.js"></script>
   <script type="text/javascript" src="scripts/mobiles.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2oNtRhnfGNgG_yQUNmBNa1kXJnNkzzp4&callback=myMap"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2oNtRhnfGNgG_yQUNmBNa1kXJnMKzzp4&callback=myMap"></script>
   </body>
 </html>
