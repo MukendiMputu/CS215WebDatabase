@@ -172,20 +172,16 @@
             <span class="label_required danger">Email or password has wrong format!</span>
           </div>
           <form class="form-validate" method="post" action="welcome.html">
-              <div class="">
-                  <label for="loginUsername" class=""> Email Address</label>
-                  <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-control"/>
-              </div>
-              <div class="">
-                  <label for="loginPassword" class=""> Password</label>
-                  <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" data-msg="Please enter your password" class="form-control"/>
-              </div>
-              <br /><br />
-              <button type="submit" class="btn-primary medium btn-submit">
-                Sign in</button>
-              <p id="para_account" >
-                or <a href="signup.html">create a new account</a>
-              </p>
+
+            <label for="loginUsername" class=""> Email Address</label>
+            <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-control"/>
+
+            <label for="loginPassword" class=""> Password</label>
+            <input name="loginPassword" id="loginPassword" placeholder="Enter your password" type="password" data-msg="Please enter your password" class="form-control"/>
+            <button type="submit" class="btn-primary medium btn-submit">Sign in</button>
+            <span id="para_account" >
+              or <a href="signup.html">create a new account</a>
+            </span>
           </form>
         </div>
     </div>
