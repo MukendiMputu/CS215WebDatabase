@@ -21,7 +21,7 @@ body {
 #grid {
     display: grid;
     grid-template-columns: 1fr 3fr 1.25fr;
-    grid-template-rows: 60px 370px 4fr 1fr;
+    grid-template-rows: 60px 50px 370px 4fr 1fr;
     background-color: #FFFFFF;
     row-gap: 20px;
 }
@@ -62,14 +62,17 @@ body {
     background: no-repeat left center/cover url("../img/conference_premium.jpg");
     grid-column-start: 1;
     grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
 }
 
 #section {
     background-color: #FFFFFF;
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
     width: 100%;
     height: 100%;
     border-radius: 15px;
@@ -79,7 +82,7 @@ body {
     background-color: #502419;
     grid-column-start: 1;
     grid-column-end: 4;
-    grid-row-start: 4;
+    grid-row-start: 5;
 }
 
 /*=============  Flex Box (Footer)  =====================*/
@@ -125,6 +128,11 @@ body {
     box-shadow: 0 0 1em rgba(0,0,0,0.15);
     padding: 1em;
     margin: 0 50px auto;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
 }
 
 #swiper {
