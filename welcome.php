@@ -64,7 +64,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="../styles/mobiles.css"/>
   </head>
   <body>
@@ -84,7 +84,7 @@
       </div> <!-- end of header -->
       <div id="user-info">
           <div id="user-info-pane">
-                <img id="logged-avatar" width="200" class="img_widget" src="<?php echo isset($user['avatar']) ? $user['avatar'] : '../img/avatar_default.png' ?>"/>
+                <img id="logged-avatar" width="200" class="img_widget" src="<?php echo isset($user['avatar']) ? $user['avatar'] : 'img/avatar_default.png' ?>"/>
                 <br/>
                 <a href="#">Edit profile</a>
           </div>
@@ -105,8 +105,8 @@
             </div>
             <div id="containers" >
                 <div id="overvPanel" class="showable">
-                  <?php foreach ($bookings as $booking) { 
-						
+                  <?php foreach ($bookings as $booking) {
+
 					?>
                     <div  class="optionItem optionLink">
                         <div class="card">
@@ -129,7 +129,7 @@
                     <!-- content catering -->
                     <div class="optionItem optionLink">
                         <div class="card">
-                            <img alt="conference room premium" class="img-small" src="../img/conference_premium.jpg"/>
+                            <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg"/>
                             <span>RIC 214</span>
                         </div>
                         <div class=" ovPanelText">
@@ -140,7 +140,7 @@
                     </div>
                     <div class="optionItem optionLink">
                         <div class="card">
-                            <img alt="conference room premium" class="img-small" src="../img/conference_premium.jpg"/>
+                            <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg"/>
                             <span>RIC 214</span>
                         </div>
                         <div class=" ovPanelText">
@@ -154,7 +154,7 @@
                     <!-- content equipment -->
                     <div class="optionItem optionLink">
                         <div class="card">
-                            <img alt="conference room premium" class="img-small" src="../img/conference_premium.jpg"/>
+                            <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg"/>
                             <span>RIC 214</span>
                         </div>
                         <div class=" ovPanelText">
@@ -168,7 +168,7 @@
                     <!-- content more -->
                     <div class="optionItem optionLink">
                         <div class="card">
-                            <img alt="conference room premium" class="img-small" src="../img/conference_premium.jpg"/>
+                            <img alt="conference room premium" class="img-small" src="img/conference_premium.jpg"/>
                             <span>RIC 214</span>
                         </div>
                         <div class=" ovPanelText">

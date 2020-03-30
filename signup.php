@@ -56,12 +56,12 @@
         $sql .= "'" .  $hash_password . "', ";
         $sql .= "'" .  $user['avatarIMG'] . "' ";
         $sql .= ")";
-                                                  
+
         $return = mysqli_query($db, $sql);
-        
+
         $new_user_id = mysqli_insert_id($db);
         header("Location: ". "http://www2.cs.uregina.ca/~mmx458/assignment/signin.php");
-                                                              
+
      }
 ?>
 </pre>
@@ -72,7 +72,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="../styles/mobiles.css"/>
   </head>
   <body>
@@ -99,7 +99,7 @@
           <div id="swiper" class="">
 		    <form name="signup_form" class="form-validate" method="post" action="http://www2.cs.uregina.ca/~mmx458/assignment/signup.php" enctype="multipart/form-data">
                   <div id="avatar_div" class="text-center">
-                    <img id="avatar" class="img_widget" src="../img/avatar_default.png"><br/>
+                    <img id="avatar" class="img_widget" src="img/avatar_default.png"><br/>
                     <label for="avatar_btn">Upload a profile picture:</label>
                     <input type="file" id="avatar_btn" name="avatar" accept="image/png, image/jpeg, image/jpg, image/gif" style="width:fit-content;">
                   </div>

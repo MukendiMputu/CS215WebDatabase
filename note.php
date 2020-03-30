@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="../styles/mobiles.css"/>
   </head>
   <body>
@@ -27,7 +27,7 @@
       </div> <!-- end of header -->
       <div id="user-info">
           <div id="user-info-pane">
-                <img alt="thumbnail of the booked room" id="logged-avatar" width="200" class="img_widget" src="../img/avatar_default.png" />
+                <img alt="thumbnail of the booked room" id="logged-avatar" width="200" class="img_widget" src="img/avatar_default.png" />
                 <br />
                 <a href="#">Edit profile</a>
           </div>
@@ -45,7 +45,7 @@
             <div id="overvPanel">
                 <div  class="optionItem">
                     <div class="card card-fixed">
-                        <img alt="conference room bright" class="img-small" src="../img/conference_bright.jpg" />
+                        <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg" />
                         <span>RIC 330</span>
                     </div>
                     <div id="booking-form">

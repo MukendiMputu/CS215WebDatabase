@@ -72,8 +72,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Room | Home </title>
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
-    <link rel="stylesheet" media="screen and (max-width: 414px)" href="../styles/mobiles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 414px)" href="styles/mobiles.css"/>
   </head>
   <body>
 
@@ -127,9 +127,8 @@
 
               <div class="card room">
                 <div >
-                  <img alt="conference room bright" class="img-small" src="<?php echo '..' . $room['picture'];  ?>"/>
+                  <img alt="conference room bright" class="img-small" src="<?php echo $room['picture'];  ?>"/>
                   <a href="#"><?php echo $room['number']; ?></a>
-		  <!--<span><?php echo $room['building']; ?></span>-->
                 </div>
                 <p class="room_description"><?php echo $room['description']; ?></p>
                 <p><span class="danger">booked</span><span  class=""> (John Doe)</span><br /></p>
@@ -166,32 +165,32 @@
             </div>
 	    <div id="php_testPane">
         <pre><?php echo print_r($rooms);?></pre>
-	       <table border="1" cellpadding="5" cellspacing="0">
+	       <table cellpadding="5" cellspacing="0">
             	  <tr>
-                    <th>rid</th>
-                    <th>Building</th>
-                    <th>Number</th>
-                    <th>Capacity</th>
-                    <th>Configuration</th>
-                    <th>Picture</th>
-                    <th>Description</th>
+                  <th>rid</th>
+                  <th>Building</th>
+                  <th>Number</th>
+                  <th>Capacity</th>
+                  <th>Configuration</th>
+                  <th>Picture</th>
+                  <th>Description</th>
             	  </tr>
-              <?php
-		$rooms = mysqli_query($db, $sql);
-		while ($room = mysqli_fetch_assoc($rooms)) {
-	      ?>
-                 <tr>
-                   <td><?php echo $room['rid']; ?></td>
-                   <td><?php echo $room['building']; ?></td>
-                   <td><?php echo $room['number']; ?></td>
-                   <td><?php echo $room['capacity']; ?></td>
-                   <td><?php echo $room['configuration']; ?></td>
-                   <td><?php echo $room['picture']; ?></td>
-                   <td><?php echo $room['description']; ?></td>
+                <?php
+                  $rooms = mysqli_query($db, $sql);
+                  while ($room = mysqli_fetch_assoc($rooms)) {
+                ?>
+                <tr>
+                  <td><?php echo $room['rid']; ?></td>
+                  <td><?php echo $room['building']; ?></td>
+                  <td><?php echo $room['number']; ?></td>
+                  <td><?php echo $room['capacity']; ?></td>
+                  <td><?php echo $room['configuration']; ?></td>
+                  <td><?php echo $room['picture']; ?></td>
+                  <td><?php echo $room['description']; ?></td>
             	  </tr>
             	<?php } ?>
-        	</table
-	      <?php
+        	</table>
+	            <?php
                 mysqli_free_result($rooms);
               ?>
             </div>
@@ -246,9 +245,9 @@
         }
       ?>
     </div>
-    <script src="../scripts/signin_validation.js"></script>
-    <script src="../scripts/date_actualizator.js"></script>
-    <script src="../scripts/mobiles.js"></script>
+    <script src="scripts/signin_validation.js"></script>
+    <script src="scripts/date_actualizator.js"></script>
+    <script src="scripts/mobiles.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2oNtRhnfGNgG_yQUNmBNa1kXJnNkzzp4&callback=myMap"></script>
   </body>
 </html>
