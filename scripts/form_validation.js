@@ -1,5 +1,5 @@
 // Signup form (event registration)
-var myForm = document.querySelector("form").addEventListener("submit", Validate, false);
+//var myForm = document.querySelector("form").addEventListener("submit", Validate, false);
 
 // Selecting all the input elements of the signup form
 var nickname = document.forms["signup_form"]["nickname"];
@@ -8,10 +8,10 @@ var password = document.forms["signup_form"]["loginPassword"];
 var password_confirm = document.forms["signup_form"]["loginPassword2"];
 
 // Registrating the event listener signup input elements
-nickname.addEventListener("keyup", verifyName, false);
-email.addEventListener("keyup", verifyEmail, false);
-password.addEventListener("keyup", verifyPwd, false);
-password_confirm.addEventListener("keyup", verifyMatch, false);
+//nickname.addEventListener("keyup", verifyName, false);
+//email.addEventListener("keyup", verifyEmail, false);
+//password.addEventListener("keyup", verifyPwd, false);
+//password_confirm.addEventListener("keyup", verifyMatch, false);
 
 
 // Unordered list of errors
@@ -76,13 +76,13 @@ function Validate(e) {
   // in case the error flag is set, show to error summary
   error = !(nicknameOK && emailOK && passwordOK && matchOK);
   if(error){
-    document.querySelector("#err_mod").classList.replace("invisible", "visible");
+    document.querySelector(".modal-danger").classList.replace("invisible", "visible");
     document.querySelector("#succ_mod").classList.replace("visible", "invisible");
       e.preventDefault();
       return false;
   // or show success msg
   }else{
-      document.querySelector("#err_mod").classList.replace("visible", "invisible");
+      document.querySelector(".modal-danger").classList.replace("visible", "invisible");
       document.querySelector("#succ_mod").classList.replace("invisible", "visible");
       e.preventDefault();
       return false;

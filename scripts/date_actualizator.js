@@ -15,7 +15,7 @@ var leftArrow = document.querySelector("#dp_left").addEventListener("click", bac
 var rightArrow = document.querySelector("#dp_right").addEventListener("click", forward, true);
 
 function backward(event) {
-    // Fetch the date in Milliseconds since Midnight Jan 1. 1970
+    // Fetch the date shown on the page
     let day = document.querySelector("#date").innerText;
     let month = SHORTMONTHS.indexOf(document.querySelector("#month").innerText);
     let year = document.querySelector("#year").innerText;
@@ -42,15 +42,15 @@ function forward(event) {
 }
 
 function adjustOrdinal() {
-    if (date.innerHTML === "1" || date.innerHTML === "21" || date.innerHTML === "31") {
+    if (date.innerHTML == 1 || date.innerHTML == 21 || date.innerHTML == 31) {
 
         document.querySelector("#ordinal").innerHTML = "st";
 
-    } else if (date.innerHTML === "2" || date.innerHTML === "22") {
+    } else if (date.innerHTML == 2 || date.innerHTML == 22) {
 
         document.querySelector("#ordinal").innerHTML = "nd";
 
-    } else if (date.innerHTML === "3" || date.innerHTML === "23") {
+    } else if (date.innerHTML == 3 || date.innerHTML == 23) {
 
         document.querySelector("#ordinal").innerHTML = "rd";
     }else{
@@ -60,24 +60,23 @@ function adjustOrdinal() {
 
 function setDateElement (dateToSet) {
     var full_date = dateToSet
-    dayOfWeek.innerHTML = full_date == Date()?
-    "Today " + SHORTDAYS[full_date.getDay()] + "," :
+    dayOfWeek.innerHTML = full_date == Date()? 
+    "Today " + SHORTDAYS[full_date.getDay()] + "," : 
     SHORTDAYS[full_date.getDay()] + ",";
 
     date.innerHTML = full_date.getDate();
     month.innerHTML = SHORTMONTHS[full_date.getMonth()];
     year.innerHTML = full_date.getFullYear();
-
 }
 setDateElement(todaysDate);
 adjustOrdinal();
+
 
 function myMap() {
     var map;
     var mapProp= {
       center:new google.maps.LatLng(50.419279,-104.591305),
-      zoom:5,
+      zoom:17,
     };
     map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
-

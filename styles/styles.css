@@ -21,9 +21,8 @@ body {
 #grid {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 60px 60px 370px 4fr 1fr;
+    grid-template-rows: 60px 60px  370px 4fr 1fr;
     background-color: #FFFFFF;
-    /* row-gap: 20px; */
 }
 
 #header {
@@ -64,7 +63,6 @@ body {
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
-
 }
 
 #section {
@@ -106,7 +104,6 @@ body {
     grid-template-rows: 30px auto auto auto;
     row-gap: 5px;
     box-shadow: 0 0 1em rgba(0,0,0,0.15);
-    /* max-width: 750px; */
     height: 100%;
     padding: 10px;
 }
@@ -126,12 +123,10 @@ body {
 
 #login_main {
     box-shadow: 0 0 1em rgba(0,0,0,0.15);
-    /* background-color: #8d6156; */
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
-
 }
 
 #err_mod {
@@ -153,14 +148,12 @@ body {
     margin: auto;
 }
 
-
-
 #swiper {
-    width: max-content;
+    width: min-content;
     margin: 0 auto;
 }
 
-#search select {
+.search select {
     background-color: #FFFFFF;
     width: 128px;
     height: 29px;
@@ -173,12 +166,14 @@ body {
     max-height: 29px;
 }
 
-#search {
+.search {
     width: 95%;
     margin: auto;
     padding-top: 1em;
     clear: both;
     display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .search_flex {
@@ -189,15 +184,6 @@ body {
 .search_label {
     font-size: 0.8em;
     color: #545759;
-}
-
-#php_testPane {
-    width: 700px;
-    height: 200px;
-    border: 3px dashed #502419;
-    margin: 25px 10px;
-    padding: 5px;
-    overflow: scroll;
 }
 
 .panes {
@@ -225,6 +211,14 @@ body {
     padding: 5px;
     float: right;
     font-size: 2em;
+}
+
+/* #rsv_status {
+
+} */
+
+#rsvd_by {
+    font-style: italic;
 }
 
 /*=============  Stylings  =====================*/
@@ -262,8 +256,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    text-decoration: none !important;
-    color: #502419 !important;
+    text-decoration: none;
+    color: #502419;
 }
 
 a:hover, a:active, .active{
@@ -271,8 +265,12 @@ a:hover, a:active, .active{
     color: #545759;
 }
 
+#text_logo:hover {
+    text-decoration-line: none;
+}
+
 .card {
-    width: 220px;
+    width: 300px;
     float: left;
     margin: auto 10px;
     box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
@@ -294,6 +292,7 @@ a:hover, a:active, .active{
 
 #avatar{
     width: 100px;
+    margin-bottom: 10px;
 }
 
 #logged-avatar, .img-small{
@@ -428,6 +427,11 @@ button:hover, input[type=submit]:hover {
     margin: 0 0 15px 0;
 }
 
+#googleMap {
+    width: 100%;
+    height: 200px;
+}
+
 .success {
     color: #228B22;
 }
@@ -520,9 +524,13 @@ button:hover, input[type=submit]:hover {
     padding-bottom: 10px;
     grid-column: 1 / 3;
 }
-
+.room_thumbnail {
+	display: inline-block;
+	width: 285px;
+	height: 190px;
+}
 .optionLink:hover {
-    background-color: rgb(80,36,25, 0.05);
+    /*background-color: rgb(80,36,25, 0.05);*/
 }
 
 .text-left {
@@ -560,4 +568,13 @@ textarea {
 .space {
     height: 10px;
     background-color: rgb(220, 220, 220);
+}
+
+#php_testPane {
+    width: 70%;
+    height: 500px;
+    border: 3px dashed #502419;
+    margin: 25px auto;
+    padding: 5px;
+    overflow: scroll;
 }

@@ -5,8 +5,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-    <link rel="stylesheet" media="screen and (max-width: 480px)" href="styles/mobiles.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 480px)" href="../styles/mobiles.css"/>
   </head>
   <body>
     <!-- container -->
@@ -18,7 +18,7 @@
           </div>
           <div id="h_side-nav">
             <ul id="side-nav">
-              <li><a href="welcome.html" class="active">Dashboard</a></li>
+              <li><a href="welcome.php" class="active">Dashboard</a></li>
               <li><a >Sign in</a></li>
               <li><a href="index.php">Sign out</a></li>
             </ul>
@@ -27,7 +27,7 @@
       </div> <!-- end of header -->
       <div id="user-info">
           <div id="user-info-pane">
-                <img alt="thumbnail of the booked room" id="logged-avatar" width="200" class="img_widget" src="img/avatar_default.png" />
+                <img alt="thumbnail of the booked room" id="logged-avatar" width="200" class="img_widget" src="../img/avatar_default.png" />
                 <br />
                 <a href="#">Edit profile</a>
           </div>
@@ -45,7 +45,7 @@
             <div id="overvPanel">
                 <div  class="optionItem">
                     <div class="card card-fixed">
-                        <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg" />
+                        <img alt="conference room bright" class="img-small" src="../img/conference_bright.jpg" />
                         <span>RIC 330</span>
                     </div>
                     <div id="booking-form">
@@ -57,12 +57,12 @@
                           <li></li>
                         </ul>
                       </div>
-                      <form class="form-validate" method="post" action="welcome.html">
-                          <input type="hidden" id="bookingID" value="ric330"/>
+                      <form class="form-validate" method="post" action="welcome.php">
+                          <input type="text" id="bookingID" hidden />
                           <label for="dptText" class="">Note:</label><br />
                           <textarea id="dptText" name="descriptText" required rows="5" cols="50" maxlength="500"></textarea>
                           <br /><span id="charCount">(<span>0</span>/500 characters )</span>
-                          <p class="text-right"><a href="welcome.html">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
+                          <p class="text-right"><a href="welcome.php">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
                       </form>
                     </div>
                 </div>
@@ -70,6 +70,7 @@
         </div><!-- end of event panes -->
       </div> <!-- end of section -->
     </div> <!-- end of container -->
-  <script type="text/javascript" src="scripts/note_validation.js"></script>
+  <script type="text/javascript" src="../scripts/note_validation.js"></script>
   </body>
 </html>
+

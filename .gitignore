@@ -1,4 +1,4 @@
-img/*
+img
 sketch.pdf
 submissionFile.txt
 php-standard
@@ -7,3 +7,4 @@ webalizer
 miscellenous
 xampp
 default-welcome-page.tgz
+fileUploads

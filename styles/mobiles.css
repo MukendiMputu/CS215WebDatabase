@@ -16,7 +16,7 @@ body {
     margin: 0;
 }
 
-/*=============[  The Grid  ]=====================*/
+/*=============  The Grid  =====================*/
 
 #grid {
     display: grid;
@@ -31,7 +31,6 @@ body {
     grid-column: 1 / 7;
     box-shadow: 0 0 1rem rgba(0,0,0,0.15);
 }
-
 #h_navBar {
     background-color: #FFFFFF;
 }
@@ -72,7 +71,6 @@ a.icon {
     background-color: #E7A977;
     text-decoration: none;
 }
-
 #side-nav {
     margin: 0;
     list-style-type: none;
@@ -97,7 +95,7 @@ a.icon {
     grid-column: span 7;
 }
 
-/*=============[  Flex Box (Footer)  ]=====================*/
+/*=============  Flex Box (Footer)  =====================*/
 #f_wrapper {
     display: flex;
     justify-content: center;
@@ -110,7 +108,7 @@ a.icon {
     color: #F2F2F2;
 }
 
-/* =========================[ Main section ]============================*/
+/* ========================= Main section ============================*/
 
 #main_pane {
     display: block;
@@ -189,7 +187,7 @@ a.icon {
     font-style: italic;
 }
 
-/*=============[  Stylings  ]=====================*/
+/*=============  Stylings  =====================*/
 
 #user-info {
 
@@ -368,7 +366,7 @@ button:hover, input[type=submit]:hover {
 }
 
 
-/**==================[ welcome.html ]===================**/
+/**================== welcome.html ===================**/
 
 #tabContainer h4 {
 	color: rgb(83, 104, 138);
@@ -407,6 +405,8 @@ button:hover, input[type=submit]:hover {
     grid-template-columns: 250px auto;
 }
 
+.ovPanelText {
+}
 
 .optionLink {
     border-bottom: 1px solid gainsboro;

@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <link rel="stylesheet" media="screen and (max-width: 480px)" href="styles/mobiles.css">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 480px)" href="../styles/mobiles.css">
   </head>
   <body>
     <!-- container -->
@@ -20,7 +20,7 @@
             <ul id="side-nav">
               <li><a href="index.php" >Home</a></li>
               <li><a class="active">Sign in</a></li>
-              <li><a href="signup.html">Sign up</a></li>
+              <li><a href="signup.php">Sign up</a></li>
             </ul>
           </div>
         </div>
@@ -31,7 +31,7 @@
           <div id="mp_titel" class="text-center"><h3>LOGIN</h3></div>
             <div class="panes">
                 <div id="" class="">
-                    <form class="form-validate" method="POST" action="welcome.html">
+                    <form class="form-validate" method="POST" action="welcome.php">
                         <div class="labeledInput">
                             <label for="loginUsername" class="form-label"> Email Address</label>
                             <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-input">
@@ -42,7 +42,7 @@
                         </div><br>
                         <div class="text-center">
                           <button type="submit" class="btn-primary medium">Sign in</button><hr>
-                          <p class="">or <a href="signup.html">create a new account</a></p>
+                          <p class="">or <a href="signup.php">create a new account</a></p>
                         </div>
                     </form>
                 </div>
@@ -50,6 +50,7 @@
         </div> <!-- end of main pane -->
       </div>
     </div><!-- end of container -->
-  <script type="text/javascript" src="scripts/signin_validation.js"></script>
+  <script type="text/javascript" src="../scripts/signin_validation.js"></script>
   </body>
 </html>
+

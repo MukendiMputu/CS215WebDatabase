@@ -2,10 +2,10 @@
 var signIn_form = document.querySelector("div#login form");
 signIn_form.addEventListener("submit", ConfirmCredentials, false);
 
-var loginUsername = signIn_form[0];
+var loginEmail = signIn_form[0];
 var loginPassword = signIn_form[1];
 
-loginUsername.addEventListener("keyup", verifyUsername, false);
+loginEmail.addEventListener("keyup", verifyUsername, false);
 loginPassword.addEventListener("keyup", verifyPassword, false);
 
 // error flags

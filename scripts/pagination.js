@@ -5,9 +5,9 @@ var tabPanels;
 
 window.onload=function() {
     // when the page loads, grab the li elements
-    tabLinks = document.querySelectorAll("#mp_tabs li");
+    tabLinks = document.getElementById("mp_tabs").getElementsByTagName("li");
     // Now get all the tab panel container divs
-    tabPanels = document.querySelectorAll("#containers .showable");
+    tabPanels = document.getElementById("containers").getElementsByClassName("showable");
 
     // activate the _first_ one
     displayPanel(tabLinks[0]);
