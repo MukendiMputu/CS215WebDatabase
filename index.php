@@ -8,6 +8,7 @@
 <?//php echo phpinfo(); require_once('private/initialize.php'); ?>
 
 <?php
+  session_start();
 
 	define("ASSIGNMT_FOLDER", dirname(__FILE__));
 	define("PUBLIC_HTML", dirname(ASSIGNMT_FOLDER));

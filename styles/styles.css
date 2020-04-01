@@ -529,9 +529,7 @@ button:hover, input[type=submit]:hover {
 	width: 285px;
 	height: 190px;
 }
-.optionLink:hover {
-    /*background-color: rgb(80,36,25, 0.05);*/
-}
+
 
 .text-left {
     text-align: left !important;
