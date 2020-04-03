@@ -1,0 +1,436 @@
+    /* border box fix */
+    html {
+        box-sizing: border-box;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* border: 1px solid gainsboro; */
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/*=============  The Grid  =====================*/
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(6, 16.3%);
+    grid-template-rows: auto 400px 400px 500px;
+    background-color: #FFFFFF;
+    column-gap: 2px;
+    row-gap: 5px;
+}
+
+#header {
+    grid-column: 1 / 7;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+}
+#h_navBar {
+    background-color: #FFFFFF;
+}
+
+#hamburger {
+    display: inline;
+}
+
+#h_side-nav, #banner{
+    display: none;
+}
+
+a.icon {
+    background: #843C2A;
+    color: #F2F2F2;
+    display: block;
+    padding: 13px 17px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#dropDownLinks {
+    display: none;
+    background-color: #502419;
+    clear: both;
+
+}
+
+#dropDownLinks a {
+    color: #F2F2F2;
+    font-weight: 600;
+    display: block;
+    padding: 15px;
+}
+
+#dropDownLinks a:hover, #dropDownLinks a:active {
+    background-color: #E7A977;
+    text-decoration: none;
+}
+#side-nav {
+    margin: 0;
+    list-style-type: none;
+}
+
+#side-nav > li {
+    float: left;
+    margin-left: 15px;
+    font-size: 1.2em;
+    line-height: 2.5em;
+}
+
+#section {
+    background-color: #FFFFFF;
+    grid-column: 1 / 7;
+    grid-row: 2 / 3;
+    border-radius: 15px;
+}
+
+#footer {
+    background-color: #502419;
+    grid-column: span 7;
+}
+
+/*=============  Flex Box (Footer)  =====================*/
+#f_wrapper {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.f_box {
+    flex: 1 1 300px;
+    padding: 20px;
+    color: #F2F2F2;
+}
+
+/* ========================= Main section ============================*/
+
+#main_pane {
+    display: block;
+    row-gap: 5px;
+    box-shadow: 0 0 1em rgba(0,0,0,0.15);
+    max-width: 750px;
+    width: 85%;
+    height: 100%;
+    padding: 0px;
+    margin: auto;
+}
+
+#mp_titel, #date_picker{
+    font-size: 0.7em;
+}
+
+#booking_pane {
+    display: block;
+    row-gap: 5px;
+    box-shadow: 0 0 1em rgba(0,0,0,0.15);
+    /* max-width: 750px; */
+    height: 100%;
+    padding: 10px;
+}
+
+
+#login_main {
+    display: none;
+    box-shadow: 0 0 1em rgba(0,0,0,0.15);
+    padding: 1em;
+    margin: 0 50px auto;
+}
+
+#swiper {
+    width: 100%;
+    margin: 10px auto;
+}
+
+#search {
+    padding-top: 1em;
+    clear: both;
+}
+
+.panes {
+    padding: 0;
+    width: max-content;
+    margin: auto;
+}
+
+#date_picker {
+    width: 100%;
+    margin: auto;
+}
+
+#dp_left {
+    padding: 5px;
+    float: left;
+    font-size: 2em;
+}
+
+#dp_date {
+    font-size: 1.5em;
+}
+
+#dp_right {
+    padding: 5px;
+    float: right;
+    font-size: 2em;
+}
+
+/* #rsv_status {
+
+} */
+
+#rsvd_by {
+    font-style: italic;
+}
+
+/*=============  Stylings  =====================*/
+
+#user-info {
+
+    grid-row-start: 2;
+    grid-row-end: 2;
+    width: 100%;
+    height: auto;
+    margin: 50px auto 0px;
+}
+
+#user-info > div#user-info-pane {
+    width: 250px;
+    float: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+#logo {
+    height: 36px;
+    font-size: .7em;
+    margin: 10px auto auto 10px;
+}
+
+#uf-ID {
+    margin: auto auto auto 50px;
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #502419;
+}
+
+a:hover, a:active, .active{
+    text-decoration: underline;
+    color: #545759;
+}
+
+#text_logo:hover {
+    text-decoration: none;
+}
+
+.card {
+    width: 220px;
+    float: left;
+    margin: auto 10px;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+    border-radius: 10px;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.card-fixed {
+    width: 220px;
+    height: 200px;
+    float: left;
+    margin-right: 20px;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+    border-radius: 10px;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+#avatar{
+    width: 100px;
+    height: auto;
+}
+
+#logged-avatar, .img-small{
+    width: 100%;
+    height: auto;
+}
+
+#btn-submit{
+    padding-top: 10px;
+    clear: both;
+}
+
+.img_widget {
+    margin: auto;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.form-control {
+    float: right;
+}
+
+.form-label {
+    float: left;
+    padding: 10px;
+}
+
+.form-group {
+    display: flow-root;
+}
+
+.form-date {
+    padding: 6px;
+}
+
+.btn-primary {
+    background-color: #7EA172;
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+    padding: 5px 10px;
+    background-color: #7D7C84;
+    color: #FFFFFF;
+}
+
+.btn-success {
+    background-color: #7EA172;
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+    padding: 5px 10px;
+    color: #FFFFFF;
+}
+
+button:hover, input[type=submit]:hover {
+    opacity: 0.5;
+}
+
+.medium {
+    width: 100px;
+}
+
+.success {
+    color: forestgreen;
+}
+
+.warning {
+    color: #DD8913;
+}
+
+.danger {
+    color: #DD2E13;
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: initial;
+}
+
+.float-right {
+    width: max-content;
+    float: right;
+}
+
+.float-left{
+    width: max-content;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.no-bullet {
+    list-style-type: none;
+}
+
+
+/**================== welcome.html ===================**/
+
+#tabContainer h4 {
+	color: rgb(83, 104, 138);
+	font-size: 2em;
+}
+
+#mp_tabs{
+    margin: auto;
+	height:30px;
+}
+
+#mp_tabs > ul{
+	font-size: 1.2em;
+	list-style:none;
+}
+#mp_tabs ul, #tmp_abs li {
+	margin:0;
+	padding:0;
+}
+
+#mp_tabs > ul > li{
+	margin:0 2px 0 0;
+	padding: 5px 10px;
+	display:block;
+	float:left;
+}
+
+#containers {
+    text-align: initial;
+	/* padding:10px 10px 25px; */
+}
+
+#overvPanel, #catering, #equipment, #more {
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: 250px auto;
+}
+
+.ovPanelText {
+}
+
+.optionLink {
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 10px;
+}
+
+.optionLink:hover {
+    background-color: rgb(80,36,25, 0.05);
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+textarea {
+    padding: 10px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    resize: vertical;
+}
+
+.space {
+    height: 10px;
+    background-color: gainsboro;
+}
