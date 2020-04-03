@@ -53,8 +53,7 @@ function Validate(e) {
   }else{
       document.querySelector("#err_mod").classList.replace("visible", "invisible");
       document.querySelector("#succ_mod").classList.replace("invisible", "visible");
-      e.preventDefault();
-      return false;
+      return true;
   }
 
 }

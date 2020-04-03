@@ -1,11 +1,37 @@
-<!DOCTYPE html>
+<?php require_once('private/initialize.php'); ?>
 
+<?php require_login();
+
+	if(!isset($_GET['bid'])) {
+		$url_ending = !isset($_GET['uid']) ? '' : 'welcome.php?id=' . $_GET['uid'];
+		redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/' . $url_ending);
+	}
+	$booking = find_booking_by_bid($_GET['bid']);
+	$user_id = $_GET['uid'];
+
+  	if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    		$note = array();
+
+    		$note['booking_ref'] = $_POST['booking_ref'];
+    		$note['content'] = $_POST['descriptText'];
+    		$note['created_at'] = date("Y-m-d H:i:s");
+
+		$prev_note = find_newest_note_by_ref($note['booking_ref']);
+    		$note['previous_note'] = $prev_note == 1 ? "NULL" : $prev_note['nid'];
+    		$inserted = insert_note($note);
+    		if($inserted) {
+      			redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/welcome.php?id=' .$_SESSION['user_id']);
+    		}
+  	   }
+?>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="../styles/mobiles.css"/>
   </head>
   <body>
@@ -19,15 +45,14 @@
           <div id="h_side-nav">
             <ul id="side-nav">
               <li><a href="welcome.php" class="active">Dashboard</a></li>
-              <li><a >Sign in</a></li>
-              <li><a href="index.php">Sign out</a></li>
+              <li><a href="signout.php">Sign out</a></li>
             </ul>
           </div>
         </div>
       </div> <!-- end of header -->
       <div id="user-info">
           <div id="user-info-pane">
-                <img alt="thumbnail of the booked room" id="logged-avatar" width="200" class="img_widget" src="img/avatar_default.png" />
+                <img alt="thumbnail of the booked room" id="logged-avatar" width="200" class="img_widget" src="../img/avatar_default.png" />
                 <br />
                 <a href="#">Edit profile</a>
           </div>
@@ -39,14 +64,15 @@
       </div><!-- end of user-info -->
       <div id="section">
         <div id="main_pane">
+			<?php $room = find_room_by_rid($booking['room_id']);
+			?>
             <div id="mp_titel">
-                <h3>Edit note for <span id="roomID">RIC 330</span></h3>
+                <h3>New Note</h3>
             </div>
             <div id="overvPanel">
-                <div  class="optionItem">
-                    <div class="card card-fixed">
-                        <img alt="conference room bright" class="img-small" src="img/conference_bright.jpg" />
-                        <span>RIC 330</span>
+                    <div class="card-fixed">
+                        <img alt="<?php echo 'Picture of conference room '.$room['number']; ?>" class="img-small" src="<?php echo '..'.$room['picture']; ?>" />
+                        <span><?php echo $room['number']; ?></span>
                     </div>
                     <div id="booking-form">
                       <div id="succ_mod" class="invisible modal-succes">
@@ -57,15 +83,14 @@
                           <li></li>
                         </ul>
                       </div>
-                      <form class="form-validate" method="post" action="welcome.php">
-                          <input type="text" id="bookingID" hidden />
+                      <form class="form-validate" method="post" action="<?php echo 'http://www2.cs.uregina.ca/~mmx458/assignment/new_note.php?bid=' .$booking['bid']; ?>">
+                          <input type="text" id="bookingID" name="booking_ref" hidden value="<?php echo $booking['bid']; ?>"/>
                           <label for="dptText" class="">Note:</label><br />
-                          <textarea id="dptText" name="descriptText" required rows="5" cols="50" maxlength="500"></textarea>
+                          <textarea id="dptText" name="descriptText" required rows="5" cols="50" maxlength="500"><?php echo $note['content']; ?></textarea>
                           <br /><span id="charCount">(<span>0</span>/500 characters )</span>
-                          <p class="text-right"><a href="welcome.php">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
+                          <p class="text-right"><a href="<?php echo 'welcome.php?id=' . $user_id; ?>">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
                       </form>
                     </div>
-                </div>
             </div>
         </div><!-- end of event panes -->
       </div> <!-- end of section -->
@@ -73,4 +98,3 @@
   <script type="text/javascript" src="../scripts/note_validation.js"></script>
   </body>
 </html>
-

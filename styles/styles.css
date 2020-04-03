@@ -1,216 +1,216 @@
-    /* border box fix */
-    html {
-        box-sizing: border-box;
-    }
-    *, *:before, *:after {
-        box-sizing: inherit;
-    }
+/* border box fix */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 * {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* border: 1px solid gainsboro; */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* border: 1px solid gainsboro; */
 }
 
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /*=============  The Grid  =====================*/
 
 #grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 60px 60px  370px 4fr 1fr;
-    background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 60px 60px  370px 4fr 1fr;
+  background-color: #FFFFFF;
 }
 
 #header {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
 }
 
 #h_navBar {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 #h_side-nav{
-    width: max-content;
-    float: right;
-    margin: 10px 10px auto auto;
+  width: max-content;
+  float: right;
+  margin: 10px 10px auto auto;
 }
 
 #hamburger, #dropDownLinks{
-    display: none;
+  display: none;
 }
 
 #side-nav {
-    margin: 0;
-    list-style-type: none;
+  margin: 0;
+  list-style-type: none;
 }
 
 #side-nav > li {
-    float: left;
-    margin-left: 15px;
-    font-size: 1.2em;
-    line-height: 2.5em;
+  float: left;
+  margin-left: 15px;
+  font-size: 1.2em;
+  line-height: 2.5em;
 }
 
 #banner {
-    background: no-repeat left center/cover url("../img/conference_premium.jpg");
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 4;
+  background: no-repeat left center/cover url("../img/conference_premium.jpg");
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
 #section {
-    background-color: #FFFFFF;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
+  background-color: #FFFFFF;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
 
 #footer {
-    background-color: #502419;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 5;
+  background-color: #502419;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 5;
 }
 
 /*=============  Flex Box (Footer)  =====================*/
 #f_wrapper {
-    display: flex;
-    justify-content: center;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 .f_box {
-    flex: 0 1 300px;
-    margin: 0 0 0 30px;
-    padding: 20px;
-    color: #F2F2F2;
+  flex: 0 1 300px;
+  margin: 0 0 0 30px;
+  padding: 20px;
+  color: #F2F2F2;
 }
 
 /* ========================= Main section ============================*/
 
 #main_pane {
-    display: grid;
-    grid-template-rows: 30px auto auto auto;
-    row-gap: 5px;
-    box-shadow: 0 0 1em rgba(0,0,0,0.15);
-    height: 100%;
-    padding: 10px;
+  display: grid;
+  grid-template-rows: 30px auto auto auto;
+  row-gap: 5px;
+  box-shadow: 0 0 1em rgba(0,0,0,0.15);
+  height: 100%;
+  padding: 10px;
 }
 
 #avatar_div{
-    margin: 10px 0 20px;
+  margin: 10px 0 20px;
 }
 
 #booking_pane {
-    display: grid;
-    row-gap: 5px;
-    box-shadow: 0 0 1em rgba(0,0,0,0.15);
-    /* max-width: 750px; */
-    height: 100%;
-    padding: 10px;
+  display: grid;
+  row-gap: 5px;
+  box-shadow: 0 0 1em rgba(0,0,0,0.15);
+  /* max-width: 750px; */
+  height: 100%;
+  padding: 10px;
 }
 
 #login_main {
-    box-shadow: 0 0 1em rgba(0,0,0,0.15);
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+  box-shadow: 0 0 1em rgba(0,0,0,0.15);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
-#err_mod {
-    position: absolute;
-    top: 120px;
-    width: 460px;
-    margin-left: -170px;
-    line-height: 150%;
-    z-index: 2100;
-    background-color: #FFFFFF;
+#err_mod_main {
+  position: absolute;
+  top: 120px;
+  width: 460px;
+  margin-left: -170px;
+  line-height: 150%;
+  z-index: 2100;
+  background-color: #FFFFFF;
 }
 
 #login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 60%;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  margin: auto;
 }
 
 #swiper {
-    width: min-content;
-    margin: 0 auto;
+  width: min-content;
+  margin: 0 auto;
 }
 
 .search select {
-    background-color: #FFFFFF;
-    width: 128px;
-    height: 29px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 0.6pt solid #C5C5C5;
-    border-radius: 5px;
-    padding: 4px 5px;
-    max-height: 29px;
+  background-color: #FFFFFF;
+  width: 128px;
+  height: 29px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0.6pt solid #C5C5C5;
+  border-radius: 5px;
+  padding: 4px 5px;
+  max-height: 29px;
 }
 
 .search {
-    width: 95%;
-    margin: auto;
-    padding-top: 1em;
-    clear: both;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+  width: 95%;
+  margin: auto;
+  padding-top: 1em;
+  clear: both;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .search_flex {
-    flex: 0 1 auto;
-    margin-right: 5px;
+  flex: 0 1 auto;
+  margin-right: 5px;
 }
 
 .search_label {
-    font-size: 0.8em;
-    color: #545759;
+  font-size: 0.8em;
+  color: #545759;
 }
 
 .panes {
-    padding: 1.8rem 8px 0 30px !important;
-    width: max-content;
-    margin: auto;
+  padding: 1.8rem 8px 0 30px !important;
+  width: max-content;
+  margin: auto;
 }
 
 #date_picker {
-    width: 70%;
-    margin: auto;
+  width: 70%;
+  margin: auto;
 }
 
 #dp_left {
-    padding: 5px;
-    float: left;
-    font-size: 2em;
+  padding: 5px;
+  float: left;
+  font-size: 2em;
 }
 
 #dp_date {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 #dp_right {
-    padding: 5px;
-    float: right;
-    font-size: 2em;
+  padding: 5px;
+  float: right;
+  font-size: 2em;
 }
 
 /* #rsv_status {
@@ -218,361 +218,387 @@ body {
 } */
 
 #rsvd_by {
-    font-style: italic;
+  font-style: italic;
 }
 
 /*=============  Stylings  =====================*/
 
 #user-info {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    width: 100%;
-    height: auto;
-    margin: 50px auto 0px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  width: 100%;
+  height: auto;
+  margin: 50px auto 0px;
 }
 
 #user-info > div#user-info-pane {
-    width: 250px;
-    float: left;
+  width: 250px;
+  float: left;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+  margin: 0;
 }
 
 #logo {
-    margin: 10px auto auto 10px;
+  margin: 10px auto auto 10px;
 }
 
 #uf-ID {
-    margin: auto auto auto 50px;
+  margin: auto auto auto 50px;
 }
 
 .fixed-nav {
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
 }
 
 a {
-    text-decoration: none;
-    color: #502419;
+  text-decoration: none;
+  color: #502419;
 }
 
 a:hover, a:active, .active{
-    text-decoration: underline;
-    color: #545759;
+  text-decoration: underline;
+  color: #545759;
 }
 
 #text_logo:hover {
-    text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .card {
-    width: 300px;
-    float: left;
-    margin: auto 10px;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
-    border-radius: 10px;
-    padding: 0.5rem;
-    text-align: left;
+  width: 300px;
+  float: left;
+  margin: auto 10px;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.15) !important;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: left;
 }
 
 .card-fixed {
-    width: 220px;
-    height: 200px;
-    float: left;
-    margin-right: 20px;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.15);
-    border-radius: 10px;
-    padding: 0.5rem;
-    text-align: left;
+  /* width: 220px;*/
+  height: 200px;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: left;
 }
 
 #avatar{
-    width: 100px;
-    margin-bottom: 10px;
+  width: 100px;
+  margin-bottom: 10px;
 }
 
 #logged-avatar, .img-small{
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .btn-submit{
-    padding-top: 10px;
-    clear: both;
+  padding-top: 10px;
+  clear: both;
 }
 
 .img_widget {
-    margin: auto;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.15);
-    border-radius: 10px;
-    padding: 0;
+  margin: auto;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+  border-radius: 10px;
+  padding: 0;
 }
 
 .labeledInput {
-    width: 400px;
-    height: 40px;
+  width: 400px;
+  height: 40px;
 }
 
 div.visible p {
-    margin: 0;
+  margin: 0;
 }
 
 ul.error_list {
-    list-style-type: square;
-    padding-left: 15px;
-    margin: 5px 0 0 0;
+  list-style-type: square;
+  padding-left: 15px;
+  margin: 5px 0 0 0;
 }
 
 .label_required {
-    font-size: 8pt;
+  font-size: 8pt;
 }
 
 .form-input {
-    float: right;
-    display: initial;
+  float: right;
+  display: initial;
 }
 
 .input-error {
-    border: 0.5pt solid #DD2E13;
-    box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.15);
-    border-radius: 5px;
-    padding: 8px;
+  border: 0.5pt solid #DD2E13;
+  box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 8px;
 }
 
 .input-success {
-    border: 0.5pt solid #7EA172;
-    box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.15);
-    border-radius: 5px;
-    padding: 8px;
+  border: 0.5pt solid #7EA172;
+  box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.15);
+  border-radius: 5px;
+  padding: 8px;
 }
 
 .form-label {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .form-date {
-    font-size: 0.8em;
-    padding: 6px;
+  font-size: 0.8em;
+  padding: 6px;
 }
 
 .btn-primary {
-    background-color: #7EA172;
-    border: 1px solid gainsboro;
-    border-radius: 7px;
-    padding: 5px 10px;
-    background-color: #7D7C84;
-    color: #FFFFFF;
+  background-color: #7EA172;
+  border: 1px solid gainsboro;
+  border-radius: 7px;
+  padding: 5px 10px;
+  background-color: #7D7C84;
+  color: #FFFFFF;
 }
 
 .btn-success {
-    background-color: #7EA172;
-    border: 1px solid gainsboro;
-    border-radius: 7px;
-    padding: 5px 10px;
-    color: #FFFFFF;
+  background-color: #7EA172;
+  border: 1px solid gainsboro;
+  border-radius: 7px;
+  padding: 5px 10px;
+  color: #FFFFFF;
 }
 
 button:hover, input[type=submit]:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .circled-button {
-    width: 32px;
-    border-radius: 50%;
-    padding: 5px 0;
-    border: 1px solid gainsboro;
+  width: 32px;
+  border-radius: 50%;
+  padding: 5px 0;
+  border: 1px solid gainsboro;
 }
 
 .large {
-    width: 200px;
+  width: 200px;
 }
 
 .medium {
-    width: 100px;
+  width: 100px;
 }
 
 .small {
-    width: 50px;
+  width: 50px;
 }
 
 .modal-succes {
-    border: 1px solid rgba(198, 226, 198, 0.50);
-    background-color: rgba(198, 226, 198, 0.50);
-    border-radius: 5px;
-    width: 100%;
-    padding: 5px;
-    margin: 0 0 5px 0;
-    margin: 0 0 15px 0;
+  border: 1px solid rgba(198, 226, 198, 0.50);
+  background-color: rgba(198, 226, 198, 0.50);
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 5px 0;
+  margin: 0 0 15px 0;
 }
 
 .modal-warning {
-    border: 1px solid rgba(228, 214, 198, 0.5);
-    background-color: rgba(228, 214, 198, 0.5);
-    border-radius: 5px;
-    width: 100%;
-    padding: 5px;
-    margin: 0 0 15px 0;
+  border: 1px solid rgba(228, 214, 198, 0.5);
+  background-color: rgba(228, 214, 198, 0.5);
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 15px 0;
 }
 
 .modal-danger {
-    border: 1px solid rgba(226, 198, 198, 0.5);
-    background-color: rgba(226, 198, 198, 0.5);
-    border-radius: 5px;
-    width: 100%;
-    padding: 5px;
-    margin: 0 0 15px 0;
+  border: 1px solid rgba(226, 198, 198, 0.5);
+  background-color: rgba(226, 198, 198, 0.5);
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 15px 0;
 }
 
 #googleMap {
-    width: 100%;
-    height: 200px;
+  width: 100%;
+  height: 200px;
 }
 
 .success {
-    color: #228B22;
+  color: #228B22;
 }
 
 .warning {
-    color: #DD8913;
+  color: #DD8913;
 }
 
 .danger {
-    color: #DD2E13;
+  color: #DD2E13;
 }
 
 .invisible {
-    display: none;
+  display: none;
 }
 
 .visible {
-    display: block;
+  display: block;
 }
 
 .float-right {
-    width: max-content;
-    float: right;
+  width: max-content;
+  float: right;
 }
 
 .float-left{
-    width: max-content;
-    float: left;
+  width: max-content;
+  float: left;
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .no-bullet {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 
 /**================== welcome.html ===================**/
 
 #tabContainer h4 {
-	color: rgb(83, 104, 138);
-	font-size: 2em;
+  color: rgb(83, 104, 138);
+  font-size: 2em;
 }
 
 #mp_tabs{
-    margin: auto;
-	height:30px;
+  margin: auto;
+  height:30px;
 }
 
 #mp_tabs > ul{
-	font-size: 1.2em;
-	list-style:none;
+  font-size: 1.2em;
+  list-style:none;
 }
 #mp_tabs ul, #tmp_abs li {
-	margin:0;
-	padding:0;
+  margin:0;
+  padding:0;
 }
 
 #mp_tabs > ul > li{
-	margin:0 2px 0 0;
-	padding: 5px 10px;
-	display:block;
-	float:left;
+  margin:0 2px 0 0;
+  padding: 5px 10px;
+  display:block;
+  float:left;
 }
 
 #containers {
-    text-align: initial;
+  text-align: initial;
 }
 
 #overvPanel, #catering, #equipment, #more {
-    display: grid;
-    row-gap: 10px;
-    grid-template-columns: 250px auto;
+  display: grid;
+  row-gap: 10px;
+  grid-template-columns: 300px auto;
+}
+
+#overvPanel {
+  column-gap: 20px;
 }
 
 .ovPanelText {
-    grid-column-start: 2;
+  grid-column-start: 2;
+  border-bottom: 1px solid gainsboro;
 }
 
 .optionItem {
-    border-bottom: 1px solid gainsboro;
-    padding-bottom: 10px;
-    grid-column: 1 / 3;
+  padding-bottom: 10px;
+
 }
 .room_thumbnail {
-	display: inline-block;
-	width: 285px;
-	height: 190px;
+  display: inline-block;
+  width: 285px;
+  height: 190px;
+}
+.optionLink:hover {
+  /*background-color: rgb(80,36,25, 0.05);*/
 }
 
+.note_bubble {
+  margin: 0 0 10px;
+  padding: 10px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+}
+
+.add_note {
+  text-align: center;
+  border: 1px solid #452113;
+  border-radius: 50%;
+  padding: 3px 10px;
+}
+
+.add_note:hover {
+  text-decoration: none;
+  background-color: #421c0f1a;
+}
 
 .text-left {
-    text-align: left !important;
+  text-align: left !important;
 }
 
 .text-center {
-    text-align: center !important;
+  text-align: center !important;
 }
 
 .text-right {
-    text-align: right !important;
+  text-align: right !important;
 }
 
 #charCount {
-    color: #7EA172;
-    display: block;
-    font-size: 8pt;
+  color: #7EA172;
+  display: block;
+  font-size: 8pt;
 }
 
-#booking-form {
-    width: max-content;
-    float: left;
+.booking-thumbnail {
+  grid-column: 1/2;
+}
+
+.booking-form {
+  grid-column: 2/3;
 }
 
 textarea {
-    padding: 10px;
-    line-height: 1.5;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px #999;
-    resize: none;
+  padding: 10px;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+  resize: none;
 }
 
 .space {
-    height: 10px;
-    background-color: rgb(220, 220, 220);
+  height: 10px;
+  background-color: rgb(220, 220, 220);
 }
 
 #php_testPane {
-    width: 70%;
-    height: 500px;
-    border: 3px dashed #502419;
-    margin: 25px auto;
-    padding: 5px;
-    overflow: scroll;
+  width: 70%;
+  height: 500px;
+  border: 3px dashed #502419;
+  margin: 25px auto;
+  padding: 5px;
+  overflow: scroll;
 }

@@ -1,3 +1,27 @@
+<?php require_once('private/initialize.php'); ?>
+
+<?php
+	$authenticated = true;
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+		$user_input_email = $_POST['loginEmail'];
+		$user_input_password = $_POST['loginPassword'];
+		
+		// Find user in DB by email 
+		$user = find_user_by_email($user_input_email);
+
+		if (count($user) == 0) { 
+			$authenticated = false; 
+		} else {
+			if (strcmp($user['hashed_password'], crypt($user_input_password, '$2a$10$AIXoSu3VD3Wn27yl3M$')) == 0) {
+				log_in_user($user);
+				redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/welcome.php?id=' . $user['uid']);
+			} else {
+				$authenticated = false;
+			}
+		}
+    }
+    
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -5,7 +29,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="../styles/mobiles.css">
   </head>
   <body>
@@ -30,11 +54,14 @@
         <div id="main_pane">
           <div id="mp_titel" class="text-center"><h3>LOGIN</h3></div>
             <div class="panes">
-                <div id="" class="">
-                    <form class="form-validate" method="POST" action="welcome.php">
+					          <div id="err_mod" class="<?php echo $authenticated ? ' invisible ' : ' visible '; ?> modal-danger">
+						<span class="label_required danger">Email or password is wrong!</span>
+					</div>
+                <div id="login" class="">
+                    <form class="form-validate" method="POST" action="signin.php">
                         <div class="labeledInput">
-                            <label for="loginUsername" class="form-label"> Email Address</label>
-                            <input name="loginUsername" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-input">
+                            <label for="loginEmail" class="form-label"> Email Address</label>
+                            <input name="loginEmail" id="loginUsername" type="email" placeholder="name@address.com" required="" data-msg="Please enter your email" class="form-input">
                         </div>
                         <div  class="labeledInput">
                             <label for="loginPassword" class="form-label"> Password</label>

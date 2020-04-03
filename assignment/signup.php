@@ -1,27 +1,7 @@
-<?php
-
-   define("DB_SERVER", "localhost");
-   define("DB_USER", "mmx458");
-   define("DB_PASS", "r!Wy0Za7");
-   define("DB_NAME", "mmx458");
-
-   define("ASSIGNMT_FOLDER", dirname(__FILE__));
-   define("PUBLIC_HTML", dirname(ASSIGNMT_FOLDER));
-   
-   $db = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-   
-   if(mysqli_connect_errno()) {
-      $msg = "Database connection failed: ";
-      $msg .= mysqli_connect_error();
-      $msg .= " (" . mysqli_connect_errno() . ")";
-      echo $msg;
-      exit($msg);
-   }
-?>
+<?php require_once('private/initialize.php'); ?>
 <pre>
 <?php
-//echo phpinfo();
-        $uploadOk = true;
+	$uploadOk = true;
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
       
@@ -34,14 +14,17 @@
         $target_dir = "fileUploads/";
         $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
         $target_fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        
+        		
         if(isset($_POST["submit"])) {
+			echo "file type is: " . $target_fileType;
             $check = getimagesize($_FILES["avatar"]["tmp_name"]);
             if($check !== false) {
                 $uploadOk = true;
-                move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
+                //move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
             } else {
-                $uploadOk = false;
+                if(!($target_fileType == 'png' || $target_fileType == 'gif' || $target_fileType == 'jpg' || $target_fileType == 'jpeg')) {
+					$uploadOk = false;
+				}
             }
          }
 
@@ -56,12 +39,12 @@
         $sql .= "'" .  $hash_password . "', ";
         $sql .= "'" .  $user['avatarIMG'] . "' ";
         $sql .= ")";
-
+                                                  
         $return = mysqli_query($db, $sql);
-
+        
         $new_user_id = mysqli_insert_id($db);
-        header("Location: ". "http://www2.cs.uregina.ca/~mmx458/assignment/signin.php");
-
+        redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/signin.php');
+                                                              
      }
 ?>
 </pre>
@@ -72,7 +55,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Romm | Sign up </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
     <link rel="stylesheet" media="screen and (max-width: 480px)" href="../styles/mobiles.css"/>
   </head>
   <body>
@@ -87,7 +70,6 @@
             <ul id="side-nav">
               <li><a href="index.php" >Home</a></li>
               <li><a href="signin.php">Sign in</a></li>
-              <li><a class="active">Sign up</a></li>
             </ul>
           </div>
         </div>
@@ -99,15 +81,12 @@
           <div id="swiper" class="">
 		    <form name="signup_form" class="form-validate" method="post" action="http://www2.cs.uregina.ca/~mmx458/assignment/signup.php" enctype="multipart/form-data">
                   <div id="avatar_div" class="text-center">
-                    <img id="avatar" class="img_widget" src="img/avatar_default.png"><br/>
+                    <img id="avatar" class="img_widget" src="../img/avatar_default.png"><br/>
                     <label for="avatar_btn">Upload a profile picture:</label>
                     <input type="file" id="avatar_btn" name="avatar" accept="image/png, image/jpeg, image/jpg, image/gif" style="width:fit-content;">
                   </div>
                   <div id="succ_mod" class="invisible modal-succes">
                     <p class="label_required success text-center">All good!</p>
-                  </div>
-                  <div id="war_mod" class="<?php echo $uploadOk ? ' invisible ' : ' visible '; ?> modal-danger">
-                    <p class="label_required warning text-center">Wrong file type!</p>
                   </div>
                   <div class="invisible modal-danger">
                     <span class="label_required danger">The following errors(s) occured:</span>
@@ -121,15 +100,15 @@
                   </div>
                   <div class="labeledInput">
                       <label for="email" class="form-label"> Email Address</label><span class="label_required danger">&nbsp;*</span>
-                      <input name="email" id="email" type="email" placeholder="name@address.com" data-msg="Please enter your email" class="form-input" />
+                      <input name="email" id="email" type="email" placeholder="name@address.com" class="form-input" />
                   </div>
                   <div class="labeledInput">
                       <label for="loginPassword" class="form-label"> Password</label><span class="label_required danger">&nbsp;*</span>
-                      <input name="loginPassword" id="loginPassword" placeholder="Enter a new password" type="password" data-msg="Please enter your password" class="form-input" />
+                      <input name="loginPassword" id="loginPassword" placeholder="Enter a new password" type="password" class="form-input" />
                   </div>
                   <div class="labeledInput">
                       <label for="loginPassword2" class="form-label"> Confirm your password</label><span class="label_required danger">&nbsp;*</span>
-                      <input name="loginPassword2" id="loginPassword2" placeholder="Cofirm your password" type="password" data-msg="Please enter your password" class="form-input" />
+                      <input name="loginPassword2" id="loginPassword2" placeholder="Cofirm your password" type="password" class="form-input" />
                   </div><span style="font-size: 8pt;color: #838383;">Field marked with <span class="label_required danger">&nbsp;*</span> are required</span>
                   <div class="text-center">
                     <br/>

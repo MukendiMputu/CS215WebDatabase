@@ -1,0 +1,68 @@
+body {
+    font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif;
+    font-size:90%;
+    padding: 1%;
+}
+
+
+
+section, aside {
+    float: none;
+    width: auto;
+}
+
+aside.left {
+    border-left: 12px solid rgb(113, 113, 109);
+    background-color: rgba(183, 183, 180, 0.11);
+    padding: 0 0 0 7px;
+    width: 90%;
+    margin: auto;
+}
+
+section.content {
+    border: none;
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+}
+
+
+header,footer, article{
+    border:1px solid grey;
+    padding:1%;
+    background-color:white;
+    text-align: center;
+}
+
+header,footer {
+    color:white;
+    background-color:#444;
+    margin-bottom:2.5px;
+    padding: 2rem;
+}
+
+header.header {
+    line-height: 2em;
+}
+
+footer{
+	clear: both;
+}
+
+
+article h2{
+   display: initial;
+   background-color: silver;
+   text-align: left;
+   width: 100%;
+}
+
+ol ol {
+   list-style-type: lower-alpha; 
+   font-size:0.9em;
+}
+
+nav{
+	margin: 0;
+	padding: 0;
+}

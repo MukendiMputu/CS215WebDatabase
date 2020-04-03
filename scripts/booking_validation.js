@@ -1,5 +1,5 @@
 // Booking form (event registration)
-var booking_form = document.querySelector("div#booking-form form");
+var booking_form = document.querySelector("div.booking-form form");
 booking_form.addEventListener("submit", Validate, false);
 
 var textArea = booking_form[4];
@@ -23,11 +23,11 @@ function Validate(e) {
   // in case of error create li and inject msg
   if (myForm[0].value == "") {
     li = document.createElement("li");
-    li.innerHTML += "Could not load the proper room ID.";
+    li.innerHTML += "Select a proper room number.";
     error_list.appendChild(li);
     roomOK = false;
 
-  } else {
+  }else {
     roomOK = true;
   }
 
@@ -44,19 +44,17 @@ function Validate(e) {
 
   // in case the error flag is set, show to error summary
   error = !(roomOK && dateOK && startTimeOK && endTimeOK && timeIntervalOK);
-  if(error){
-    document.querySelector("#err_mod").classList.replace("invisible", "visible");
-    document.querySelector("#succ_mod").classList.replace("visible", "invisible");
-      e.preventDefault();
-      return false;
-  // or show success msg
-  }else{
-      document.querySelector("#err_mod").classList.replace("visible", "invisible");
-      document.querySelector("#succ_mod").classList.replace("invisible", "visible");
-      e.preventDefault();
-      return false;
-  }
-
+  if(error) {
+     document.querySelector("#err_mod").classList.replace("invisible", "visible");
+     document.querySelector("#succ_mod").classList.replace("visible", "invisible");
+     	e.preventDefault();
+	return false;     
+// or show success msg
+   }else{
+     document.querySelector("#err_mod").classList.replace("visible", "invisible");
+     document.querySelector("#succ_mod").classList.replace("invisible", "visible");
+     return true;
+   }
 }
 
 /*==========[ Event handler functions for textarea ]================*/

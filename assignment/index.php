@@ -1,69 +1,36 @@
-<?php
+<?php 
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
     ini_set('track_errors', '1');
     error_reporting(E_ALL & ~E_WARNING );
 ?>
 
-<?//php echo phpinfo(); require_once('private/initialize.php'); ?>
+<?php require_once('private/initialize.php'); //echo phpinfo(); ?>
 
 <?php
-  session_start();
-
-	define("ASSIGNMT_FOLDER", dirname(__FILE__));
-	define("PUBLIC_HTML", dirname(ASSIGNMT_FOLDER));
-	define("WWW_ROOT", "http://www2.cs.uregina.ca/~mmx458/assignment");
-
-   	define("DB_SERVER", "localhost");
-   	define("DB_USER", "mmx458");
-   	define("DB_PASS", "r!Wy0Za7");
-   	define("DB_NAME", "mmx458");
-
-   	$db = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-
-   	if(mysqli_connect_errno()) {
-      		$msg = "Database connection failed: ";
-      		$msg .= mysqli_connect_error();
-      		$msg .= " (" . mysqli_connect_errno() . ")";
-      		exit($msg);
-   	}
-
-    $sql  = "SELECT * FROM Rooms ";
-    $sql .= "ORDER BY number ASC";
-    $result = mysqli_query($db, $sql);
-    $numb_rows = mysqli_num_rows($result);
-    $rooms = array();
-    for ($i=1; $i <= $numb_rows; $i++) {
-      // Fetch every single room as array
-      $rooms[] = mysqli_fetch_assoc($result);
-    }
+    $rooms = find_all_rooms();
 ?>
 <?php
 	$authenticated = true;
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$user_input_email = $_POST['loginEmail'];
 		$user_input_password = $_POST['loginPassword'];
+		
+		// Find user in DB by email 
+		$user = find_user_by_email($user_input_email);
 
-		// Find user in DB by email
-		$query = sprintf("SELECT uid, email, hashed_password FROM Users WHERE email = '%s' LIMIT 1",
-					mysqli_real_escape_string($db, $user_input_email));
-		$result = mysqli_query($db, $query);
-
-		if (mysqli_num_rows($result) == 0) {
-			$authenticated = false;
+		if (count($user) == 0) { 
+			$authenticated = false; 
 		} else {
-			$db_array = mysqli_fetch_assoc($result);
-
-			if (strcmp($db_array['hashed_password'], crypt($user_input_password, '$2a$10$AIXoSU3VD3Wn27yl3M$')) == 0) {
-				$user_id = $db_array['uid'];
-				echo "Redirecting...";
-				header("Location: " . 'http://www2.cs.uregina.ca/~mmx458/assignment/welcome.php?id=' . $user_id);
+			if (strcmp($user['hashed_password'], crypt($user_input_password, '$2a$10$AIXoSu3VD3Wn27yl3M$')) == 0) {
+				log_in_user($user);
+				redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/welcome.php?id=' . $user['uid']);
 			} else {
 				$authenticated = false;
 			}
 		}
     }
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -73,8 +40,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Conference Room | Home </title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
-    <link rel="stylesheet" media="screen and (max-width: 414px)" href="styles/mobiles.css"/>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 414px)" href="../styles/mobiles.css"/>
   </head>
   <body>
 
@@ -115,7 +82,7 @@
       <div id="section">
         <div id="main_pane">
           <div id="mp_titel" class="text-center">
-            <h2>Bookings</h2>
+            <h2>Availabilities</h2>
           </div>
           <div id="date_picker" class="text-center">
             <a id="dp_left" href="javascript:void(0)"><span>&langle;</span></a>
@@ -125,11 +92,12 @@
           <div id="swiper">
 	    <div class="search">
             <?php foreach ($rooms as $room) { ?>
-
+              
               <div class="card room">
                 <div >
-                  <img alt="conference room bright" class="img-small" src="<?php echo $room['picture'];  ?>"/>
+                  <img alt="conference room bright" class="img-small" src="<?php echo '..' . $room['picture'];  ?>"/>
                   <a href="#"><?php echo $room['number']; ?></a>
+		  <!--<span><?php echo $room['building']; ?></span>-->
                 </div>
                 <p class="room_description"><?php echo $room['description']; ?></p>
                 <p><span class="danger">booked</span><span  class=""> (John Doe)</span><br /></p>
@@ -165,34 +133,37 @@
               </div>
             </div>
 	    <div id="php_testPane">
+		<?php echo date("H:i", strtotime("+1 hour")); ?>
         <pre><?php echo print_r($rooms);?></pre>
-	       <table cellpadding="5" cellspacing="0">
+	       <table border="1" cellpadding="5" cellspacing="0">
             	  <tr>
-                  <th>rid</th>
-                  <th>Building</th>
-                  <th>Number</th>
-                  <th>Capacity</th>
-                  <th>Configuration</th>
-                  <th>Picture</th>
-                  <th>Description</th>
+                    <th>rid</th>
+                    <th>Building</th>
+                    <th>Number</th>
+                    <th>Capacity</th>
+                    <th>Configuration</th>
+                    <th>Picture</th>
+                    <th>Description</th>
             	  </tr>
-                <?php
-                  $rooms = mysqli_query($db, $sql);
-                  while ($room = mysqli_fetch_assoc($rooms)) {
-                ?>
-                <tr>
-                  <td><?php echo $room['rid']; ?></td>
-                  <td><?php echo $room['building']; ?></td>
-                  <td><?php echo $room['number']; ?></td>
-                  <td><?php echo $room['capacity']; ?></td>
-                  <td><?php echo $room['configuration']; ?></td>
-                  <td><?php echo $room['picture']; ?></td>
-                  <td><?php echo $room['description']; ?></td>
+              <?php 
+		$rooms = find_all_rooms();
+		$ric214 = find_room_by_number('RIC 214');
+		echo print_r($ric214);
+		foreach($rooms as $room) {
+	      ?>
+                 <tr>
+                   <td><?php echo $room['rid']; ?></td>
+                   <td><?php echo $room['building']; ?></td>
+                   <td><?php echo $room['number']; ?></td>
+                   <td><?php echo $room['capacity']; ?></td>
+                   <td><?php echo $room['configuration']; ?></td>
+                   <td><?php echo $room['picture']; ?></td>
+                   <td><?php echo $room['description']; ?></td>
             	  </tr>
             	<?php } ?>
-        	</table>
-	            <?php
-                mysqli_free_result($rooms);
+        	</table>	
+	      <?php	
+                mysqli_free_result($rooms);		
               ?>
             </div>
           </div>
@@ -203,7 +174,7 @@
    <!-- [ LOGIN ] -->
       <div id="login_main">
         <div id="login" >
-          <div id="err_mod" class="<?php echo $authenticated ? ' invisible ' : ' visible '; ?> modal-danger">
+          <div id="err_mod_main" class="<?php echo $authenticated ? ' invisible ' : ' visible '; ?> modal-danger">
             <span class="label_required danger">Email or password is wrong!</span>
           </div>
           <form class="form-validate" method="post" action="index.php">
@@ -246,9 +217,9 @@
         }
       ?>
     </div>
-    <script src="scripts/signin_validation.js"></script>
-    <script src="scripts/date_actualizator.js"></script>
-    <script src="scripts/mobiles.js"></script>
+    <script src="../scripts/signin_validation.js"></script>
+    <script src="../scripts/date_actualizator.js"></script>
+    <script src="../scripts/mobiles.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2oNtRhnfGNgG_yQUNmBNa1kXJnNkzzp4&callback=myMap"></script>
   </body>
 </html>
