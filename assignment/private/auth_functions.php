@@ -6,6 +6,8 @@
         $_SESSION['user_id'] = $user['uid'];
         $_SESSION['last_login'] = time();
         $_SESSION['username'] = $user['uname'];
+        $_SESSION['user_email'] = $user['email'];
+        $_SESSION['user_avatar'] = $user['avatar'];
         return true;
     }
 
