@@ -1,4 +1,4 @@
-<?php 
+<?php
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
     ini_set('track_errors', '1');
@@ -15,12 +15,12 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$user_input_email = $_POST['loginEmail'];
 		$user_input_password = $_POST['loginPassword'];
-		
-		// Find user in DB by email 
+
+		// Find user in DB by email
 		$user = find_user_by_email($user_input_email);
 
-		if (count($user) == 0) { 
-			$authenticated = false; 
+		if (count($user) == 0) {
+			$authenticated = false;
 		} else {
 			if (strcmp($user['hashed_password'], crypt($user_input_password, '$2a$10$AIXoSu3VD3Wn27yl3M$')) == 0) {
 				log_in_user($user);
@@ -30,7 +30,7 @@
 			}
 		}
     }
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -85,19 +85,18 @@
             <h2>Availabilities</h2>
           </div>
           <div id="date_picker" class="text-center">
-            <a id="dp_left" href="javascript:void(0)"><span>&langle;</span></a>
-            <span id="dp_date"><span id="day"></span> <span id="month">Jan</span>. <span id="date">20</span><sup id="ordinal">th</sup> <span id="year">2020</span></span>
-            <a id="dp_right" href="javascript:void(0)"><span>&rangle;</span></a>
+            <span id="dp_date">
+              <span id="day"></span> <span id="month">Jan</span>. <span id="date">20</span><sup id="ordinal">th</sup> <span id="year">2020</span>
+            </span>
           </div>
           <div id="swiper">
-	    <div class="search">
+	    <div id="booking_panorama" class="search">
             <?php foreach ($rooms as $room) { ?>
-              
+
               <div class="card room">
                 <div >
                   <img alt="conference room bright" class="img-small" src="<?php echo '..' . $room['picture'];  ?>"/>
                   <a href="#"><?php echo $room['number']; ?></a>
-		  <!--<span><?php echo $room['building']; ?></span>-->
                 </div>
                 <p class="room_description"><?php echo $room['description']; ?></p>
                 <p><span class="danger">booked</span><span  class=""> (John Doe)</span><br /></p>
@@ -118,7 +117,7 @@
               </div>
               <div class="search_flex">
                 <label for="booking_date" class="search_label"> Date: </label>
-                <input type="date" id="booking_date" name="reserv-start" value="2018-07-22" min="1999-01-01" max="2999-12-31" class="form-date"/>
+                <input type="date" id="booking_date" name="reserv-start" value="<?php echo date("Y-m-d"); ?>" min="1999-01-01" max="2999-12-31" class="form-date"/>
               </div>
               <div class="search_flex">
                 <label for="booking_date" class="search_label"> from: </label>
@@ -145,7 +144,7 @@
                     <th>Picture</th>
                     <th>Description</th>
             	  </tr>
-              <?php 
+              <?php
 		$rooms = find_all_rooms();
 		$ric214 = find_room_by_number('RIC 214');
 		echo print_r($ric214);
@@ -161,9 +160,9 @@
                    <td><?php echo $room['description']; ?></td>
             	  </tr>
             	<?php } ?>
-        	</table>	
-	      <?php	
-                mysqli_free_result($rooms);		
+        	</table>
+	      <?php
+                mysqli_free_result($rooms);
               ?>
             </div>
           </div>

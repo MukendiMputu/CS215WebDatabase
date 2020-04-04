@@ -10,37 +10,6 @@ var date = document.querySelector("#date");
 var month = document.querySelector("#month");
 var year = document.querySelector("#year");
 
-var leftArrow = document.querySelector("#dp_left").addEventListener("click", backward, true);
-
-var rightArrow = document.querySelector("#dp_right").addEventListener("click", forward, true);
-
-function backward(event) {
-    // Fetch the date shown on the page
-    let day = document.querySelector("#date").innerText;
-    let month = SHORTMONTHS.indexOf(document.querySelector("#month").innerText);
-    let year = document.querySelector("#year").innerText;
-
-    let shownDate = new Date(year, month, day);
-
-    shownDate.setDate(shownDate.getDate() -1);
-
-    setDateElement(shownDate);
-    adjustOrdinal();
-}
-
-function forward(event) {
-    let day = document.querySelector("#date").innerText;
-    let month = SHORTMONTHS.indexOf(document.querySelector("#month").innerText);
-    let year = document.querySelector("#year").innerText;
-
-    let shownDate = new Date(year, month, day);
-
-    shownDate.setDate(shownDate.getDate() + 1);
-
-    setDateElement(shownDate);
-    adjustOrdinal();
-}
-
 function adjustOrdinal() {
     if (date.innerHTML == 1 || date.innerHTML == 21 || date.innerHTML == 31) {
 
@@ -60,16 +29,68 @@ function adjustOrdinal() {
 
 function setDateElement (dateToSet) {
     var full_date = dateToSet
-    dayOfWeek.innerHTML = full_date == Date()? 
-    "Today " + SHORTDAYS[full_date.getDay()] + "," : 
+    dayOfWeek.innerHTML = full_date == Date()?
+    "Today " + SHORTDAYS[full_date.getDay()] + "," :
     SHORTDAYS[full_date.getDay()] + ",";
 
     date.innerHTML = full_date.getDate();
     month.innerHTML = SHORTMONTHS[full_date.getMonth()];
     year.innerHTML = full_date.getFullYear();
 }
+
 setDateElement(todaysDate);
 adjustOrdinal();
+
+//==================================== AJAX ========================================//
+
+var roomSelector = document.querySelector("select#ip_search").addEventListener("change", getBookings, true);
+
+
+function getBookings(event) {
+    var roomID = event.currentTarget.value;
+    let queryDate = document.querySelector("input#booking_date").value;
+    let queryStartTime = document.querySelector("input#start_time").value;
+    let queryEndTime = document.querySelector("input#end_time").value;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+                if (xhttp.readyState == 4 && xhttp.status == 200){
+                    var jsonRsp = JSON.parse(xhttp.responseText);
+                    console.log(jsonRsp);
+                    dispatchBookingData(jsonRsp);
+                }
+    }
+
+    var url = 'http://www2.cs.uregina.ca/~mmx458/assignment/ajaxBooking.php?rid=' + encodeURIComponent(roomID);
+    url += '&date=' + encodeURIComponent(queryDate);
+    url += '&start=' + encodeURIComponent(queryStartTime);
+    url += '&end=' + encodeURIComponent(queryEndTime);
+    console.log(url);
+    xhttp.open('GET', url, true);
+    xhttp.send();
+}
+
+function dispatchBookingData(jsonObject) {
+  let bookingsPanorama = document.querySelector("div#booking_panorama");
+  bookingsPanorama.innerHTML = '';
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+  for (var i = 0; i < jsonObject.bookings.length; i++) {
+    let bookingCard = document.createElement("div");
+    bookingCard.classList.add("card", "room");
+      let innerText  = "<div> ";
+          innerText += "<img alt='Picture for a conference room' class='img-small' src='.." + jsonObject.rooms.picture +  "'/> ";
+          innerText += "<a href='#'>" + jsonObject.rooms.number +  "</a>  ";
+          innerText += "</div> ";
+          innerText += "<p class='room_description'>" + jsonObject.bookings[i].purpose +  "<br /></p> ";
+          innerText += "" + (new Date(jsonObject.bookings[i].date)).toLocaleDateString('en-EN', options) +  "<br /></p> ";
+          innerText += "" + jsonObject.bookings[i].start_time + " - " + jsonObject.bookings[i].end_time + "<br /></p> ";
+          innerText += "<p><span class='danger'>booked</span><span  class=''> (John Doe)</span><br /></p>";
+      bookingCard.innerHTML = innerText;
+      bookingsPanorama.appendChild(bookingCard);
+  }
+}
+
 
 
 function myMap() {
