@@ -2,17 +2,16 @@
 
 <?php require_login();
 
-  if(isset($_GET['id'])) {
+  if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $updated = delete_booking($_POST['bid']);
+    if($updated) {
+      redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/welcome.php?id=' .$_GET['uid']);
+    }
+  }else if(isset($_GET['id'])) {
   	$bid = $_GET['id'];
   	$booking = find_booking_by_bid($bid);
   }
 
-  if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $updated = delete_booking($_POST['id']);
-    if($updated) {
-      redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/welcome.php?id=' .$_GET['uid']);
-    }
-  }
 ?>
 
 <?php include_once('private/shared_header.php'); ?>
@@ -37,8 +36,8 @@
             <div id="err_mod" class="invisible modal-danger">
               <ul class="error_list label_required danger"></ul>
             </div>
-            <form class="form-validate" method="POST" action="<?php echo 'http://www2.cs.uregina.ca/~mmx458/assignment/delete_booking.php?id='.$_POST['id'].'&uid='.$booking['user_id']; ?>">
-              <input type="text" id="rooID" value="<?php echo $room['number']; ?>" hidden>
+            <form class="form-validate" method="POST" action="<?php echo 'http://www2.cs.uregina.ca/~mmx458/assignment/delete_booking.php?id='.$booking['bid'].'&uid='.$booking['user_id']; ?>">
+              <input type="text" id="bookingID" name="bid" value="<?php echo $booking['bid']; ?>" hidden>
               <label for="reserv-date" class=""> Date: </label>
               <input type="date" id="r_date" name="reserv-date" value="<?php echo $booking['date']; ?>" min="2018-01-01" max="2040-12-31" class="form-date" readonly><br><br>
               <label for="reserv-start" class=""> Time from: </label><input type="time" id="start" name="reserv-start" value="<?php echo $booking['start_time']; ?>" min="06:00" max="21:00" class="form-date" readonly>
@@ -54,6 +53,5 @@
       </div><!-- end of main panes -->
     </div> <!-- end of section -->
   </div> <!-- end of container -->
-</body>
-<script src="../scripts/booking_validation.js"></script>
-</html>
+
+<?php include_once('private/shared_footer.php'); ?>

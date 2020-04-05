@@ -19,13 +19,12 @@
 			<?php $room = find_room_by_rid($note['room_id']); 
 			?>
             <div id="mp_titel">
-                <h3>Edit note for <span id="roomID">RIC 330</span></h3>
+                <h3>Edit Note</h3>
             </div>
             <div id="overvPanel">
-                <div  class="optionItem">
-                    <div class="card card-fixed">
-                        <img alt="conference room bright" class="img-small" src="../img/conference_bright.jpg" />
-                        <span>RIC 330</span>
+                    <div class="card-fixed">
+                        <img alt="<?php echo 'Picture of conference room '.$room['number']; ?>" class="img-small" src="<?php echo '..'.$room['picture']; ?>" />
+                        <span><?php echo $room['number']; ?></span>
                     </div>
                     <div id="booking-form">
                       <div id="succ_mod" class="invisible modal-succes">
@@ -50,6 +49,5 @@
       </div> <!-- end of section -->
     </div> <!-- end of container -->
   <script type="text/javascript" src="../scripts/note_validation.js"></script>
-  </body>
-</html>
 
+<?php include_once('private/shared_footer.php'); ?>

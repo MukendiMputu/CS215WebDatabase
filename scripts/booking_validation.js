@@ -48,7 +48,7 @@ function Validate(e) {
      document.querySelector("#err_mod").classList.replace("invisible", "visible");
      document.querySelector("#succ_mod").classList.replace("visible", "invisible");
      	e.preventDefault();
-	return false;     
+	return false;
 // or show success msg
    }else{
      document.querySelector("#err_mod").classList.replace("visible", "invisible");

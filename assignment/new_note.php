@@ -63,5 +63,5 @@
       </div> <!-- end of section -->
     </div> <!-- end of container -->
   <script type="text/javascript" src="../scripts/note_validation.js"></script>
-  </body>
-</html>
+
+<?php include_once('private/shared_footer.php'); ?>

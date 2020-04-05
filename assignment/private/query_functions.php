@@ -40,6 +40,15 @@
 		return $room;
 	}
 
+	function delete_room($rid) {
+		global $db;
+
+		$sql = sprintf("DELETE FROM Rooms
+						WHERE rid = '%s' LIMIT 1", db_escape($db, $rid));
+		$result = mysqli_query($db, $sql);
+		return $room;
+	}
+
 //==================== Finding, Updating & Deleting Users ========================//
 
 	function find_user_by_uname($uname) {
@@ -72,6 +81,15 @@
 		$result = mysqli_query($db, $sql);
 		$user = mysqli_fetch_assoc($result);
 		mysqli_free_result($result);
+		return $user;
+	}
+
+	function delete_user($uid) {
+		global $db;
+
+		$sql = sprintf("DELETE FROM Users
+						WHERE uid = '%s' LIMIT 1", db_escape($db, $uid));
+		$result = mysqli_query($db, $sql);
 		return $user;
 	}
 
@@ -253,6 +271,15 @@
 			$sql .= ")";
 			$result = mysqli_query($db, $sql);
 			return $result;
+	}
+
+	function delete_note($nid) {
+		global $db;
+
+		$sql = sprintf("DELETE FROM Notes
+						WHERE nid = '%s' LIMIT 1", db_escape($db, $nid));
+		$result = mysqli_query($db, $sql);
+		return $note;
 	}
 
 

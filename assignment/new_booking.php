@@ -67,6 +67,6 @@
       </div><!-- end of main panes -->
     </div> <!-- end of section -->
   </div> <!-- end of container -->
-</body>
 <script src="../scripts/booking_validation.js"></script>
-</html>
+
+<?php include_once('private/shared_footer.php'); ?>

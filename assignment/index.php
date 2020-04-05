@@ -1,10 +1,3 @@
-<?php
-    ini_set('display_errors', '1');
-    ini_set('display_startup_errors', '1');
-    ini_set('track_errors', '1');
-    error_reporting(E_ALL & ~E_WARNING );
-?>
-
 <?php require_once('private/initialize.php'); //echo phpinfo(); ?>
 
 <?php
@@ -211,14 +204,10 @@
           </div>
         </div>
       </div>
-      <?php if(isset($db)) {
-          mysqli_close($db);
-        }
-      ?>
     </div>
     <script src="../scripts/signin_validation.js"></script>
     <script src="../scripts/date_actualizator.js"></script>
     <script src="../scripts/mobiles.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2oNtRhnfGNgG_yQUNmBNa1kXJnNkzzp4&callback=myMap"></script>
-  </body>
-</html>
+
+<?php include_once('private/shared_footer.php'); ?>

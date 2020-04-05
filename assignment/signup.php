@@ -123,5 +123,5 @@
       </div> <!-- end of container -->
     </div>
   <script type="text/javascript" src="../scripts/form_validation.js"></script>
-  </body>
-</html>
+
+<?php include_once('private/shared_footer.php'); ?>

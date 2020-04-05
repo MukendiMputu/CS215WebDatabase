@@ -47,7 +47,7 @@ if(isset($_GET)) {
 				</div>
 				<div id="containers" >
 					<div id="overvPanel" class="showable">
-						<p style="grid-column: 1/3; "><a href="<?php echo 'http://www2.cs.uregina.ca/~mmx458/assignment/new_booking.php' ; ?>">Add a new booking</a></p>
+						<p style="grid-column: 1/3; margin: 0;"><a href="<?php echo 'http://www2.cs.uregina.ca/~mmx458/assignment/new_booking.php' ; ?>">Add a new booking</a></p>
 						<?php foreach ($bookings as $booking) { ?>
 							<div class="card">
 								<div class="room_thumbnail booking-thumbnail">
@@ -128,5 +128,5 @@ if(isset($_GET)) {
 		</div> <!-- end of container -->
 	</div>
 	<script type="text/javascript" src="../scripts/pagination.js"></script>
-</body>
-</html>
+
+<?php include_once('private/shared_footer.php'); ?>
