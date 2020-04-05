@@ -11,12 +11,13 @@
 ?>
 
 
+<?php $page_title = "Edit Note" ?>
 <?php include_once('private/shared_header.php') ?>
 <?php include_once('private/shared_user_info.php') ?>
 
       <div id="section">
         <div id="main_pane">
-			<?php $room = find_room_by_rid($note['room_id']); 
+			<?php $room = find_room_by_rid($note['room_id']);
 			?>
             <div id="mp_titel">
                 <h3>Edit Note</h3>

@@ -5,7 +5,7 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$user_input_email = $_POST['loginEmail'];
 		$user_input_password = $_POST['loginPassword'];
-		
+
 		// Find user in DB by email 
 		$user = find_user_by_email($user_input_email);
 
@@ -20,8 +20,8 @@
 			}
 		}
     }
-    
 ?>
+<?php $page_title = "Sign In" ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -43,7 +43,6 @@
           <div id="h_side-nav">
             <ul id="side-nav">
               <li><a href="index.php" >Home</a></li>
-              <li><a class="active">Sign in</a></li>
               <li><a href="signup.php">Sign up</a></li>
             </ul>
           </div>

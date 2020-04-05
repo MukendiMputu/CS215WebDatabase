@@ -3,6 +3,6 @@
           mysqli_close($db);
         }
       ?>
-    <div style="text-align:center;">Conference Room &copy;<?php echo date("Y"); ?></div>
+    <div id="shared_footer">Conference Room | Copyright&copy; <?php echo date("Y"); ?></div>
   </body>
 </html>

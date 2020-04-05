@@ -221,6 +221,13 @@ body {
   font-style: italic;
 }
 
+#shared_footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #DCDCDC;
+  box-shadow: 1px -5px 15px #DCDCDC;
+}
+
 /*=============  Stylings  =====================*/
 
 #user-info {

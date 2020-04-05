@@ -13,7 +13,7 @@
   }
 
 ?>
-
+<?php $page_title = "Delete booking" ?>
 <?php include_once('private/shared_header.php'); ?>
 <?php include_once('private/shared_user_info.php') ?>
 

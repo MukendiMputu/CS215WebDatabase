@@ -26,6 +26,7 @@
 ?>
 
 
+<?php $page_title = "New Note" ?>
 <?php include_once('private/shared_header.php') ?>
 <?php include_once('private/shared_user_info.php') ?>
 

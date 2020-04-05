@@ -1,10 +1,10 @@
 <?php require_once('private/initialize.php'); ?>
-<pre>
+
 <?php
 	$uploadOk = true;
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-      
+
         //  Handle form values sent by signup.php
         $user = array();
         $user['uname'] = $_POST['nickname'];
@@ -14,7 +14,7 @@
         $target_dir = "fileUploads/";
         $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
         $target_fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        		
+
         if(isset($_POST["submit"])) {
 			echo "file type is: " . $target_fileType;
             $check = getimagesize($_FILES["avatar"]["tmp_name"]);
@@ -29,9 +29,9 @@
          }
 
         $user['avatarIMG'] = $target_file;
-                              
+
         $hash_password = crypt($user['password'], '$2a$10$AIXoSu3VD3Wn27yl3M$');
-                             
+
         $sql = "INSERT INTO Users (uname, email, hashed_password, avatar) ";
         $sql .= "VALUES (";
         $sql .= "'" .  mysqli_real_escape_string($db, $user['uname']) . "', ";
@@ -39,15 +39,17 @@
         $sql .= "'" .  $hash_password . "', ";
         $sql .= "'" .  $user['avatarIMG'] . "' ";
         $sql .= ")";
-                                                  
+
         $return = mysqli_query($db, $sql);
-        
+
         $new_user_id = mysqli_insert_id($db);
         redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/signin.php');
-                                                              
+
      }
 ?>
-</pre>
+
+<?php $page_title = "Sign Up" ?>
+<?php include_once('private/shared_header.php') ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -93,7 +95,7 @@
                     <ul class="error_list label_required danger">
                         <li></li>
                     </ul>
-                  </div>                                                                      
+                  </div>
                   <div class="labeledInput">
                       <label for="nickname" class="form-label"> Nickname</label><span class="label_required danger">&nbsp;*</span>
                       <input name="nickname" id="nickname" type="text" placeholder="Choose a new nickname" value="" class="form-input"/>
