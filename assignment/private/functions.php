@@ -21,7 +21,7 @@
         return $msg;
       }
     }
-	
+
 	// Validation functions
 
 	function has_valid_email_format($value) {

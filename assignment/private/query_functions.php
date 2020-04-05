@@ -185,6 +185,16 @@
 			return $result;
 	}
 
+	function delete_booking($bid) {
+			global $db;
+
+			$sql  = "DELETE FROM Bookings WHERE ";
+			$sql .= "bid = '" . db_escape($db, $bid) . "' LIMIT 1";
+			$result = mysqli_query($db, $sql);
+			return $result;
+	}
+
+
 //==================== Finding, Updating & Deleting Notes ========================//
 
 	function find_note_by_nid($nid) {
