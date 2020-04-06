@@ -18,7 +18,8 @@
 				</div>
 				<div id="h_side-nav">
 					<ul id="side-nav">
-            <li><a href="welcome.php?id= <?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>" class="active">Dashboard</a></li>
+						<li><a href="index.php">Home</a></li>
+            			<li><a href="welcome.php?id= <?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>" class="active">Dashboard</a></li>
 						<li><a href="signout.php">Sign out</a></li>
 					</ul>
 				</div>

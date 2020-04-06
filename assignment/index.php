@@ -1,6 +1,7 @@
 <?php require_once('private/initialize.php'); //echo phpinfo(); ?>
 
 <?php
+    $bookings = find_all_bookings();
     $rooms = find_all_rooms();
 ?>
 <?php
@@ -45,12 +46,14 @@
       <div id="header">
         <div id="h_navBar">
           <div id="logo" class="float-left">
-            <h1><a id="text_logo" href="main.php" >Conference Room</a></h1>
+            <h1><a id="text_logo" href="index.php" >Conference Room</a></h1>
           </div>
           <div id="h_side-nav">
             <ul id="side-nav">
               <li><a class="active" >Home</a></li>
-              <li><a class="btn-primary " href="signup.php#main_pane">Sign up</a></li>
+              <?php
+               echo isset($_SESSION['user_id']) ? '<li><a href="welcome.php?id='.$_SESSION['user_id']. '">Dashboard</a></li>' : '<li><a class="btn-primary " href="signup.php#main_pane">Sign up</a></li>';
+              ?>
             </ul>
           </div>
 
@@ -84,15 +87,22 @@
           </div>
           <div id="swiper">
 	    <div id="booking_panorama" class="search">
-            <?php foreach ($rooms as $room) { ?>
-
+            <?php foreach ($bookings as $booking) {
+              $room = find_room_by_rid($booking['room_id']);
+              $user = find_user_by_uid($booking['user_id']);
+            ?>
               <div class="card room">
                 <div >
                   <img alt="conference room bright" class="img-small" src="<?php echo '..' . $room['picture'];  ?>"/>
                   <a href="#"><?php echo $room['number']; ?></a>
                 </div>
                 <p class="room_description"><?php echo $room['description']; ?></p>
-                <p><span class="danger">booked</span><span  class=""> (John Doe)</span><br /></p>
+                <p class="booking_details">
+                <h4><?php echo $booking['purpose']; ?></h4>
+								<span>Date: <?php echo date('d M Y',strtotime($booking['date'])) ; ?> </span><br/>
+								<span>Time: <?php echo date('H:i a',strtotime($booking['start_time'])) ; ?> - <?php echo date('H:i a',strtotime($booking['end_time'])) ; ?> </span>
+                </p>
+                <p><span  class=""> (<?php echo $user['uname'] ?>)</span><br /></p>
               </div>
             <?php } ?>
 	    </div>
@@ -162,7 +172,7 @@
         </div>
       </div>
 
-
+<?php if(!isset($_SESSION['user_id'])) { ?>
    <!-- [ LOGIN ] -->
       <div id="login_main">
         <div id="login" >
@@ -182,7 +192,7 @@
           </form>
         </div>
     </div>
-
+<?php } ?>
     <!-- [ FOOTER ] -->
       <div id="footer">
         <div id="f_wrapper">
@@ -205,9 +215,11 @@
         </div>
       </div>
     </div>
-    <script src="../scripts/signin_validation.js"></script>
+    <?php if (!isset($_SESSION['user_id'])) { ?>
+      <script src="../scripts/signin_validation.js"></script>
+    <?php } ?>
+      <script src="../scripts/mobiles.js"></script>
     <script src="../scripts/date_actualizator.js"></script>
-    <script src="../scripts/mobiles.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2oNtRhnfGNgG_yQUNmBNa1kXJnNkzzp4&callback=myMap"></script>
 
 <?php include_once('private/shared_footer.php'); ?>

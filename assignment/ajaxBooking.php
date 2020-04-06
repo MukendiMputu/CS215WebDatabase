@@ -16,6 +16,7 @@
   		$bookings["bookings"] = find_all_bookings_with_filter($filterOption);
       $bookings["rooms"] = find_room_by_rid($filterOption['rid']);
 
+
       echo json_encode($bookings);
     }
 

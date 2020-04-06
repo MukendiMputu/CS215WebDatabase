@@ -2,11 +2,11 @@
 
 <?php require_login();
 
-	if(!isset($_GET['id'])) {
+	if(!isset($_GET['nid'])) {
 		$url_ending = !isset($_GET['uid']) ? '' : 'welcome.php?id=' . $_GET['uid'];
 		redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/' . $url_ending);
 	}
-	$note = find_note_by_nid($_GET['id']);
+	$note = find_note_by_nid($_GET['nid']);
 	$user_id = $_GET['uid'];
 ?>
 
@@ -17,7 +17,9 @@
 
       <div id="section">
         <div id="main_pane">
-			<?php $room = find_room_by_rid($note['room_id']);
+			<?php
+        $booking = find_booking_by_bid($note['booking_ref']);
+        $room = find_room_by_rid($booking['room_id']);
 			?>
             <div id="mp_titel">
                 <h3>Edit Note</h3>
@@ -36,19 +38,19 @@
                           <li></li>
                         </ul>
                       </div>
-                      <form class="form-validate" method="post" action="welcome.php">
+                      <form class="form-validate" method="post" action="note.php?nid=">
                           <input type="text" id="bookingID" hidden />
                           <label for="dptText" class="">Note:</label><br />
                           <textarea id="dptText" name="descriptText" required rows="5" cols="50" maxlength="500"><?php echo $note['content']; ?></textarea>
                           <br /><span id="charCount">(<span>0</span>/500 characters )</span>
-                          <p class="text-right"><a href="<?php echo 'welcome.php?id=' . $user_id; ?>">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
+                          <p class="text-right"><a href="<?php echo 'welcome.php?id=' . $_SESSION['user_id']; ?>">cancel</a> | <button type="submit" class="btn-success medium">save</button></p>
                       </form>
                     </div>
+          <div><a href="delete_note.php?nid=<?php echo $booking['bid']; ?>">Delete this note</a></div>
                 </div>
             </div>
         </div><!-- end of event panes -->
       </div> <!-- end of section -->
     </div> <!-- end of container -->
   <script type="text/javascript" src="../scripts/note_validation.js"></script>
-
 <?php include_once('private/shared_footer.php'); ?>

@@ -9,6 +9,23 @@ var dayOfWeek = document.querySelector("#day");
 var date = document.querySelector("#date");
 var month = document.querySelector("#month");
 var year = document.querySelector("#year");
+var bookingsCards = document.querySelectorAll(".card, .room");
+
+bookingsCards.forEach(card => card.addEventListener("mouseover", displayInfo, true));
+bookingsCards.forEach(card => card.addEventListener("mouseout", hideInfo, true));
+
+function displayInfo(event) {
+    room_description = document.querySelector(".room_description");
+    room_description.style.display = "inline-block";
+    room_description.style.position = "absolute";
+    room_description.style.left = (event.clientX + 10) + "px";
+    room_description.style.top = (event.clientY + 200) + "px";
+}
+
+function hideInfo(event) {
+    room_description = document.querySelector(".room_description");
+    room_description.style.display = "none";
+}
 
 function adjustOrdinal() {
     if (date.innerHTML == 1 || date.innerHTML == 21 || date.innerHTML == 31) {
@@ -85,7 +102,7 @@ function dispatchBookingData(jsonObject) {
           innerText += "<p class='room_description'>" + jsonObject.bookings[i].purpose +  "<br /></p> ";
           innerText += "" + (new Date(jsonObject.bookings[i].date)).toLocaleDateString('en-EN', options) +  "<br /></p> ";
           innerText += "" + jsonObject.bookings[i].start_time + " - " + jsonObject.bookings[i].end_time + "<br /></p> ";
-          innerText += "<p><span class='danger'>booked</span><span  class=''> (John Doe)</span><br /></p>";
+          innerText += "<p><span  class=''> (User)</span><br /></p>";
       bookingCard.innerHTML = innerText;
       bookingsPanorama.appendChild(bookingCard);
   }

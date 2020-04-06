@@ -63,7 +63,7 @@ if(isset($_GET)) {
 								<?php $notes = find_all_notes_by_ref($booking['booking_ref']);
 									   foreach ( $notes as $note ) {
 								 ?>
-								<p class="note_bubble"><?php echo $note['content']; ?></p><a href="<?php echo 'note.php?id=' . $note['nid'] . '&uid=' . $user_id ?>">edit note</a><br/>
+								<p class="note_bubble"><?php echo $note['content']; ?></p><a href="<?php echo 'note.php?nid=' . $note['nid'] . '&uid=' . $user_id ?>">edit note</a><br/>
 								<?php } ?>
 								<p style="color:#452113;">Add note <a class="add_note" href="<?php echo 'http://www2.cs.uregina.ca/~mmx458/assignment/new_note.php?bid='.$booking['bid'].'&uid='.$_SESSION['user_id']; ?>"> <span style="font-size:12pt;">+</span></a></p>
 								<p class=" float-right"><a href="<?php echo 'booking.php?id=' . $booking['bid'] . '&uid=' . $user_id ?>">edit booking</a> </p>
