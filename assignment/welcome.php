@@ -7,30 +7,30 @@ error_reporting(E_ALL & ~E_WARNING );?>
 <?php require_once('private/initialize.php'); ?>
 
 <?php
-require_login();
+	require_login();
 
-if(isset($_GET)) {
-	$user_id = $_GET['id'];
+	if(isset($_GET)) {
+		$user_id = $_GET['id'];
 
-	$user = find_user_by_uid($user_id);
+		$user = find_user_by_uid($user_id);
 
-	$sql  = "SELECT DISTINCT bid, purpose, date, start_time, end_time, ";
-	$sql .= "room_id, number, booking_ref, picture FROM Bookings	 ";
-	$sql .= "LEFT JOIN Notes ON Bookings.bid = Notes.booking_ref ";
-	$sql .= "INNER JOIN Rooms ON Bookings.room_id = Rooms.rid ";
-	$sql .= sprintf("AND Bookings.user_id = %s ", $user_id);
-	$sql .= "ORDER BY Bookings.date ASC, Bookings.start_time ASC";
-	$query_result = mysqli_query($db, $sql);
-	$num_rows = mysqli_num_rows($query_result);
-	$bookings = array();
-	for ($i=1; $i <= $num_rows; $i++) {
-		// Fetch every single booking
-		$bookings[] = mysqli_fetch_assoc($query_result);
+		$sql  = "SELECT DISTINCT bid, purpose, date, start_time, end_time, ";
+		$sql .= "room_id, number, booking_ref, picture FROM Bookings	 ";
+		$sql .= "LEFT JOIN Notes ON Bookings.bid = Notes.booking_ref ";
+		$sql .= "INNER JOIN Rooms ON Bookings.room_id = Rooms.rid ";
+		$sql .= sprintf("AND Bookings.user_id = %s ", $user_id);
+		$sql .= "ORDER BY Bookings.date ASC, Bookings.start_time ASC";
+		$query_result = mysqli_query($db, $sql);
+		$num_rows = mysqli_num_rows($query_result);
+		$bookings = array();
+		for ($i=1; $i <= $num_rows; $i++) {
+			// Fetch every single booking
+			$bookings[] = mysqli_fetch_assoc($query_result);
+		}
+		mysqli_free_result($query_result);
+	} else {
+		redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/signin.php');
 	}
-	mysqli_free_result($query_result);
-} else {
-	redirect_to('http://www2.cs.uregina.ca/~mmx458/assignment/signin.php');
-}
 ?>
 <?php include_once('private/shared_header.php') ?>
 <?php include_once('private/shared_user_info.php') ?>
