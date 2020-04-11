@@ -2,7 +2,7 @@
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 ini_set('track_errors', '1');
-error_reporting(E_ALL & ~E_WARNING );?>
+error_reporting(E_ALL & ~E_WARNING ); ?>
 
 <?php require_once('private/initialize.php'); ?>
 

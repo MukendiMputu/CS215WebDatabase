@@ -3,6 +3,10 @@
 		return mysqli_real_escape_string($db, $string);
 	}
 
+	function hSpecChars($string) {
+		return htmlspecialchars($string);
+	}
+
 	function redirect_to($location) {
 		header("Location: " . $location);
 	}
@@ -10,7 +14,7 @@
   	function display_session_message() {
 		$msg = get_and_clear_session_message();
 		if (!is_blank($msg)) {
-			return '<div id="message">'. h($msg) . '</div>';
+			return '<div id="message">'. hSpecChars($msg) . '</div>';
 		}
 	}
 
@@ -39,16 +43,5 @@
 		return $length < $max;
 	}
 
-	function has_length($value, $options) {
-		if(isset($options['min']) && !has_length_greater_than($value, $options['min'] - 1)) {
-			return false;
-		} elseif(isset($options['max']) && !has_length_less_than($value, $options['max'] + 1)) {
-			return false;
-		} elseif(isset($options['exact']) && !has_length_exactly($value, $options['exact'])) {
-			return false;
-		} else {
-			return true;
-		}
-	}
 
 ?>

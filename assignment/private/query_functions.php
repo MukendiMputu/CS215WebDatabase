@@ -46,7 +46,7 @@
 		$sql = sprintf("DELETE FROM Rooms
 						WHERE rid = '%s' LIMIT 1", db_escape($db, $rid));
 		$result = mysqli_query($db, $sql);
-		return $room;
+		return $result;
 	}
 
 //==================== Finding, Updating & Deleting Users ========================//
@@ -55,7 +55,7 @@
 		global $db;
 
 		$sql = sprintf("SELECT * FROM Users
-						WHERE uname = '%s' LIMIT 1", $uname);
+						WHERE uname = '%s' LIMIT 1", db_escape($db, $uname));
 		$result = mysqli_query($db, $sql);
 		$user = mysqli_fetch_assoc($result);
 		mysqli_free_result($result);
@@ -90,7 +90,7 @@
 		$sql = sprintf("DELETE FROM Users
 						WHERE uid = '%s' LIMIT 1", db_escape($db, $uid));
 		$result = mysqli_query($db, $sql);
-		return $user;
+		return $result;
 	}
 
 //==================== Finding, Updating & Deleting Bookings ========================//
@@ -279,7 +279,7 @@
 		$sql = sprintf("DELETE FROM Notes
 						WHERE nid = '%s' LIMIT 1", db_escape($db, $nid));
 		$result = mysqli_query($db, $sql);
-		return $note;
+		return $result;
 	}
 
 
